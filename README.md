@@ -41,14 +41,16 @@ Nessa etapa é necessário realizar o planejamento da aplicação. C:
 * "Sprint Planning": Definine o escopo e realiza criação de tarefas no Backlog do quadro Kanbam, simulando um sprint planning da metodologia Scrum.
   
 ## Modelagem de Classe
-Para modelagem de classe, foi escolhido 0..* para 1 para ambos as relações "Sale"-"Client" quanto "Sale"-"Product", ou seja, uma venda sempre deve obrigatoriamente ter um cliente e um produto. Nesse contexto, o atributo "quantity" representa a quantidade de produtos do mesmo tipo que foram vendidos. 
+Para modelagem de classe, foi utilizado o draw.io para fazer um diagrama de clasess UML. Foi escolhido 0..* para 1 para ambos as relações "Sale"<->"Client" quanto "Sale"<->"Product", ou seja, uma venda sempre deve obrigatoriamente ter um cliente e um produto. Nesse contexto, o atributo "quantity" representa a quantidade de produtos do mesmo tipo que foram vendidos. 
 
-![Company X drawio(1)](https://github.com/pedro-ca/DeMaria-Company-X/assets/50923316/19382c94-2b70-4cbf-9642-073ece35254f)
+Todas as classes vão possuir um método chamado "Validate()" que retorna uma mensagem de erro ou sucesso, com o objetivo de verificar o input do usuário antes de enviar para o banco. 
+
+![Company X drawio(2)](https://github.com/pedro-ca/DeMaria-X-Company/assets/50923316/ece0afd6-ba9f-4496-a4ac-0144925bc4a0)
 
 Foi ponderado também a possibilidade de poder haver mais que um tipo de produto em uma venda, em uma relação 1..* para 1..*. Porém essa ideia foi descarta pois aumentaria o escopo da aplicação e poderia fugir dos requisitos previamente estipulados.
 
 ## Definições de Negócios
-Levando em consideração os requisitos, podemos abstrair as seguintes regras de negócio para as 3 classes:
+Levando em consideração os requisitos, podemos abstrair as seguintes regras de negócio implicitas para as 3 classes:
 * Client:
   * Atributo "name" não pode ser vazio
   * Atributo "address" não pode ser vazio
@@ -68,3 +70,8 @@ Levando em consideração os requisitos, podemos abstrair as seguintes regras de
     * Atributo "quantity" não pode ser um valor menor ou igual a zero
     * Não deve permitir a venda caso o atributo "InStock" do "Product" atrelado seja menor que a quantidade desejada de compra
     * Ao cadastrar venda, deve subtrair a quantidade de itens vendidos do atributo "InStock" do "Product" atrelado
+    
+## Definições Visuais
+Para as definições, foi utilizado o Figma para criar um protótipo de interface. Esse protótipo apresenta um menu que aponta para a tela de cada uma das 3 classes. Cada tela possui um ReportViewer, um botão "New", um botão "Edit" e um botão "Delete". Como estilo do tema, foi utilizado o X (antigo Twitter) como inspiração
+
+![image](https://github.com/pedro-ca/DeMaria-X-Company/assets/50923316/f1b56c27-ea0f-4656-850e-1cd808e6d4c6)
