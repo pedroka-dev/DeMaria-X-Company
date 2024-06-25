@@ -8,18 +8,12 @@ namespace X_Company.ORM
     {
         public DbSet<Product> Products { get; set; }
 
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder
-                .UseLoggerFactory(null)
-                .UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DBLocadoraDeVeiculosORM;Integrated Security=True");
-
-        }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => 
+            optionsBuilder.UseNpgsql(@"Host=localhost;Username=postgres;Password=admin;Database=postgres", o => o.UseNetTopologySuite());
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(XCompanyDBContext).Assembly);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(XCompanyDBContext).Assembly).HasDefaultSchema("custome_schema");
             foreach (var entity in modelBuilder.Model.GetEntityTypes())
             {
                 var properties = entity.GetProperties().Where(p => p.ClrType == typeof(decimal));
@@ -29,13 +23,14 @@ namespace X_Company.ORM
                         property.SetColumnType("decimal(18,2)");
             }
         }
-        public static IConfiguration InitConfiguration()
-        {
-            var config = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json")
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .Build();
-            return config;
-        }
+
+        //public static IConfiguration InitConfiguration()
+        //{
+        //    var config = new ConfigurationBuilder()
+        //        .AddJsonFile("appsettings.json")
+        //        .SetBasePath(Directory.GetCurrentDirectory())
+        //        .Build();
+        //    return config;
+        //}
     }
 }
