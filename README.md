@@ -36,11 +36,11 @@ Tarefas:
 # Dia 1 - Planejamento 
 Nessa etapa é necessário realizar o planejamento da aplicação. C:
 * Modelagem de Classe: Utilização de UML para modelar a classes que serão utilizada, para fins de documentação e para ser utilzando como referência na criação do domínio e banco de dados da aplicação
-* Definições de Negócios: Define as regras de negócios levando em consideração os requisitos, simulando as definições visuais requisitadas por um Product Manager / Product Owner de um time de de desenvolvimento ágil. 
-* Definições Visuais: Define a aparência da interface Windows Forms, simulando as definições visuais requisitadas por um Product Manager / Product Owner de um time de de desenvolvimento ágil
-* "Sprint Planning": Definine o escopo e realiza criação de tarefas no Backlog do quadro Kanbam, simulando um sprint planning da metodologia Scrum.
+* Definições de Negócios: Define as regras de negócios levando em consideração os requisitos, simulando as definições de négocio oferecidas por um Product Manager. 
+* Definições Visuais: Define a aparência da interface Windows Forms, simulando as definições visuais oferecidas por um Product Managetr.
+* Sprint Planning: Definine o escopo e realiza criação de tarefas no Backlog do quadro Kanbam, simulando um sprint planning da metodologia Scrum.
   
-## Modelagem de Classe
+### Modelagem de Classe
 Para modelagem de classe, foi utilizado o draw.io para fazer um diagrama de clasess UML. Foi escolhido 0..* para 1 para ambos as relações "Sale"<->"Client" quanto "Sale"<->"Product", ou seja, uma venda sempre deve obrigatoriamente ter um cliente e um produto. Nesse contexto, o atributo "quantity" representa a quantidade de produtos do mesmo tipo que foram vendidos. 
 
 Todas as classes vão possuir um método chamado "Validate()" que retorna uma mensagem de erro ou sucesso, com o objetivo de verificar o input do usuário antes de enviar para o banco. 
@@ -49,19 +49,19 @@ Todas as classes vão possuir um método chamado "Validate()" que retorna uma me
 
 Foi ponderado também a possibilidade de poder haver mais que um tipo de produto em uma venda, em uma relação 1..* para 1..*. Porém essa ideia foi descarta pois aumentaria o escopo da aplicação e poderia fugir dos requisitos previamente estipulados.
 
-## Definições de Negócios
+### Definições de Negócios
 Levando em consideração os requisitos, podemos abstrair as seguintes regras de negócio implicitas para as 3 classes:
+* Product:
+  * Atributo "name" não pode ser vazio
+  * Atributo "description" não pode ser vazio
+  * Atributo "price" não pode ser um valor menor ou igual a zero
+  * Atributo "inStock" não pode ser um valor menor que zero
+  * Objeto não pode ser removido caso houver "Sale" atrelada
 * Client:
   * Atributo "name" não pode ser vazio
   * Atributo "address" não pode ser vazio
   * Atributo "phone" deve ser um número de telefone válido
   * Atributo "email" deve ser um email válido
-  * Objeto não pode ser removido caso houver "Sale" atrelada
-* Product:
-  * Atributo "name" não pode ser vazio
-  * Atributo "description" não pode ser vazio
-  * Atributo "price" não pode ser um valor menor ou igual a zero
-  * Atributo "stock" não pode ser um valor menor que zero
   * Objeto não pode ser removido caso houver "Sale" atrelada
 * Sale:
   * Atributo "Client" não deve ser nulo
@@ -70,8 +70,30 @@ Levando em consideração os requisitos, podemos abstrair as seguintes regras de
     * Atributo "quantity" não pode ser um valor menor ou igual a zero
     * Não deve permitir a venda caso o atributo "InStock" do "Product" atrelado seja menor que a quantidade desejada de compra
     * Ao cadastrar venda, deve subtrair a quantidade de itens vendidos do atributo "InStock" do "Product" atrelado
-    
-## Definições Visuais
-Para as definições, foi utilizado o Figma para criar um protótipo de interface. Esse protótipo apresenta um menu que aponta para a tela de cada uma das 3 classes. Cada tela possui um ReportViewer, um botão "New", um botão "Edit" e um botão "Delete". Como estilo do tema, foi utilizado o X (antigo Twitter) como inspiração
 
-![image](https://github.com/pedro-ca/DeMaria-X-Company/assets/50923316/f1b56c27-ea0f-4656-850e-1cd808e6d4c6)
+### Definições Visuais
+Para as definições, foi utilizado o Figma para criar um protótipo de interface. Esse protótipo apresenta um menu principal com 3 botões, cada um apontando para a tela de cada uma das classes. Cada tela possui um ReportViewer, um botão "New", um botão "Edit" e um botão "Delete". Como estilo do tema, foi utilizado o X (antigo Twitter) como inspiração
+
+![image](https://github.com/pedro-ca/DeMaria-X-Company/assets/50923316/0332a507-469b-473d-8a2c-c1effecb2612)
+
+
+### Sprint Planning
+Foi criado um quadro Kamban contendo tarefas para as features do projeto. O padrão escolhido para a escrita de todas as stories é:
+* Justificativa (Como X, Desejo Y)
+* Definições visuais
+* Definições Técnicas (se houver)
+* Definições de Negócio (se houver)
+
+No total foi criado 7 user stories. Elas foram dividas por classe (product, client, sale). Porém por razões de um escopo tecnológico adicional (ReportViewer), as operações de visualizar ganharam histórias aparte. As stories que foram criadas são:
+* [Tela Principal](https://github.com/pedro-ca/DeMaria-X-Company/issues/1)
+* [Visualizar Product](https://github.com/pedro-ca/DeMaria-X-Company/issues/2)
+* [Visualizar Client](https://github.com/pedro-ca/DeMaria-X-Company/issues/3) 
+* [Visualizar Sales](https://github.com/pedro-ca/DeMaria-X-Company/issues/4)
+* [Inserir, Editar e Remover Product](https://github.com/pedro-ca/DeMaria-X-Company/issues/5)
+* [Inserir, Editar e Remover Client](https://github.com/pedro-ca/DeMaria-X-Company/issues/6)
+* [Inserir, Editar e Remover Sale](https://github.com/pedro-ca/DeMaria-X-Company/issues/7)
+![image](https://github.com/pedro-ca/DeMaria-X-Company/assets/50923316/7ab29d07-64cd-4d29-babe-8085658e0236)
+
+
+
+
