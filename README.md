@@ -33,7 +33,7 @@ Tarefas:
   * Realizar testes de integração para verificar a interação entre os diferentes módulos.
   * Documentar os testes realizados e os resultados.
 
-# Dia 1 - Planejamento 
+# Planejamento Inicial 
 Nessa etapa é necessário realizar o planejamento da aplicação. C:
 * Modelagem de Classe: Utilização de UML para modelar a classes que serão utilizada, para fins de documentação e para ser utilzando como referência na criação do domínio e banco de dados da aplicação
 * Definições de Negócios: Define as regras de negócios levando em consideração os requisitos, simulando as definições de négocio oferecidas por um Product Manager. 
@@ -72,10 +72,10 @@ Levando em consideração os requisitos, podemos abstrair as seguintes regras de
     * Ao cadastrar venda, deve subtrair a quantidade de itens vendidos do atributo "InStock" do "Product" atrelado
 
 ### Definições Visuais
-Para as definições, foi utilizado o Figma para criar um protótipo de interface. Esse protótipo apresenta um menu principal com 3 botões, cada um apontando para a tela de cada uma das classes. Cada tela possui um ReportViewer, um botão "New", um botão "Edit" e um botão "Delete". Como estilo do tema, foi utilizado o X (antigo Twitter) como inspiração
+Para as definições, foi utilizado o Figma para criar um protótipo de interface. Esse protótipo apresenta um menu principal com 3 botões, cada um apontando para a tela de cada uma das classes. 
 
-![image](https://github.com/pedro-ca/DeMaria-X-Company/assets/50923316/0332a507-469b-473d-8a2c-c1effecb2612)
-
+Cada tela possui um ReportViewer, um botão "New", um botão "Edit", um botão "Delete" e um botão "Report". Como estilo do tema, foi utilizado o X (antigo Twitter) como inspiração
+![image](https://github.com/pedro-ca/DeMaria-X-Company/assets/50923316/588e2d0a-4663-4fe4-ba2a-19113d1cbc99)
 
 ### Sprint Planning
 Foi criado um quadro Kamban contendo tarefas para as features do projeto. O padrão escolhido para a escrita de todas as stories é:
@@ -84,7 +84,7 @@ Foi criado um quadro Kamban contendo tarefas para as features do projeto. O padr
 * Definições Técnicas (se houver)
 * Definições de Negócio (se houver)
 
-No total foi criado 7 user stories. Elas foram dividas por classe (product, client, sale). Porém por razões de um escopo tecnológico adicional (ReportViewer), as operações de visualizar ganharam histórias aparte. As stories que foram criadas são:
+No total foi criado 10 user stories. A divisão foi realizada baseada na similaridade de escopo entre elas. As stories que foram criadas são:
 * [Tela Principal](https://github.com/pedro-ca/DeMaria-X-Company/issues/1)
 * [Visualizar Product](https://github.com/pedro-ca/DeMaria-X-Company/issues/2)
 * [Visualizar Client](https://github.com/pedro-ca/DeMaria-X-Company/issues/3) 
@@ -92,7 +92,12 @@ No total foi criado 7 user stories. Elas foram dividas por classe (product, clie
 * [Inserir, Editar e Remover Product](https://github.com/pedro-ca/DeMaria-X-Company/issues/5)
 * [Inserir, Editar e Remover Client](https://github.com/pedro-ca/DeMaria-X-Company/issues/6)
 * [Inserir, Editar e Remover Sale](https://github.com/pedro-ca/DeMaria-X-Company/issues/7)
-![image](https://github.com/pedro-ca/DeMaria-X-Company/assets/50923316/7ab29d07-64cd-4d29-babe-8085658e0236)
+* [Client Report](https://github.com/pedro-ca/DeMaria-X-Company/issues/9)
+* [Product Report](https://github.com/pedro-ca/DeMaria-X-Company/issues/10)
+* [Sale Report](https://github.com/pedro-ca/DeMaria-X-Company/issues/11)
+![image](https://github.com/pedro-ca/DeMaria-X-Company/assets/50923316/43410626-110b-4b31-af12-93c7b5f5d84b)
+
+
 
 
 
