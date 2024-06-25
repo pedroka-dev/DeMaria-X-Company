@@ -17,14 +17,19 @@ namespace X_Company
             InitializeComponent();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void productsButton_Click(object sender, EventArgs e)
         {
-
+            throw new NotImplementedException();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void clientsButton_Click(object sender, EventArgs e)
         {
+            throw new NotImplementedException();
+        }
 
+        private void salesButton_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

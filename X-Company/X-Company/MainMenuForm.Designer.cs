@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenuForm));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.productsButton = new System.Windows.Forms.Button();
+            this.salesButton = new System.Windows.Forms.Button();
+            this.clientsButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -49,7 +49,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label1
             // 
@@ -62,50 +61,52 @@
             this.label1.Text = "Store Administration";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // productsButton
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.WindowText;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(180, 90);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "📦 Products";
-            this.button1.UseVisualStyleBackColor = false;
+            this.productsButton.BackColor = System.Drawing.SystemColors.WindowText;
+            this.productsButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.productsButton.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.productsButton.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.productsButton.Location = new System.Drawing.Point(0, 0);
+            this.productsButton.Name = "productsButton";
+            this.productsButton.Size = new System.Drawing.Size(180, 90);
+            this.productsButton.TabIndex = 0;
+            this.productsButton.Text = "📦 Products";
+            this.productsButton.UseVisualStyleBackColor = false;
+            this.productsButton.Click += new System.EventHandler(this.productsButton_Click);
             // 
-            // button2
+            // salesButton
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.WindowText;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2.Location = new System.Drawing.Point(0, 315);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(180, 90);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "🛒 Sales";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.salesButton.BackColor = System.Drawing.SystemColors.WindowText;
+            this.salesButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.salesButton.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salesButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.salesButton.Location = new System.Drawing.Point(0, 315);
+            this.salesButton.Name = "salesButton";
+            this.salesButton.Size = new System.Drawing.Size(180, 90);
+            this.salesButton.TabIndex = 1;
+            this.salesButton.Text = "🛒 Sales";
+            this.salesButton.UseVisualStyleBackColor = false;
+            this.salesButton.Click += new System.EventHandler(this.salesButton_Click);
             // 
-            // button3
+            // clientsButton
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.WindowText;
-            this.button3.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button3.Location = new System.Drawing.Point(0, 153);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(180, 90);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "👤 Clients";
-            this.button3.UseVisualStyleBackColor = false;
+            this.clientsButton.BackColor = System.Drawing.SystemColors.WindowText;
+            this.clientsButton.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clientsButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.clientsButton.Location = new System.Drawing.Point(0, 153);
+            this.clientsButton.Name = "clientsButton";
+            this.clientsButton.Size = new System.Drawing.Size(180, 90);
+            this.clientsButton.TabIndex = 2;
+            this.clientsButton.Text = "👤 Clients";
+            this.clientsButton.UseVisualStyleBackColor = false;
+            this.clientsButton.Click += new System.EventHandler(this.clientsButton_Click);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.clientsButton);
+            this.panel1.Controls.Add(this.salesButton);
+            this.panel1.Controls.Add(this.productsButton);
             this.panel1.Location = new System.Drawing.Point(260, 230);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(180, 405);
@@ -135,10 +136,10 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button salesButton;
+        private System.Windows.Forms.Button clientsButton;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button productsButton;
     }
 }
 
