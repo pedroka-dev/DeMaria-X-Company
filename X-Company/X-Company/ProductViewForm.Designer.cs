@@ -99,10 +99,10 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Controls.Add(this.deleteButton, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.reportButton, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.editButton, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.editButton, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.newButton, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.reportButton, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.deleteButton, 2, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -153,7 +153,7 @@
             this.editButton.BackColor = System.Drawing.SystemColors.WindowText;
             this.editButton.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editButton.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.editButton.Location = new System.Drawing.Point(50, 20);
+            this.editButton.Location = new System.Drawing.Point(323, 20);
             this.editButton.Margin = new System.Windows.Forms.Padding(50, 20, 50, 20);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(173, 60);
@@ -170,7 +170,7 @@
             this.newButton.BackColor = System.Drawing.SystemColors.WindowText;
             this.newButton.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newButton.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.newButton.Location = new System.Drawing.Point(323, 20);
+            this.newButton.Location = new System.Drawing.Point(50, 20);
             this.newButton.Margin = new System.Windows.Forms.Padding(50, 20, 50, 20);
             this.newButton.Name = "newButton";
             this.newButton.Size = new System.Drawing.Size(173, 60);
