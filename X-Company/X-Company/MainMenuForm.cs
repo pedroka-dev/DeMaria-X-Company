@@ -19,7 +19,8 @@ namespace X_Company
 
         private void productsButton_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            var view = new ProductViewForm();
+            view.Show();
         }
 
         private void clientsButton_Click(object sender, EventArgs e)
