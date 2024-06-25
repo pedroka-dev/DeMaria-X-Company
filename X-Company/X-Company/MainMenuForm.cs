@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace X_Company
 {
-    public partial class Form1 : Form
+    public partial class MainMenuForm : Form
     {
-        public Form1()
+        public MainMenuForm()
         {
             InitializeComponent();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
