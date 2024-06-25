@@ -98,6 +98,33 @@ No total foi criado 10 user stories. A divisão foi realizada baseada na similar
 ![image](https://github.com/pedro-ca/DeMaria-X-Company/assets/50923316/43410626-110b-4b31-af12-93c7b5f5d84b)
 
 
+# Desenvolvimento
+
+
+### Conexão com o PortgresSQL utilizando ORM
+Para conexão com o banco de dados PostgresSQL, foi utilizado o principio de design chamado Object Relational Mapping (ORM) ao invés de ADO.Net. Através do Entity Framework e do NPGSQL, o design ORM permite integração do PostgresSQL com maior grau de escalabilidade e facilidade de manutenção.
+
+Com isso, foi necessário instalar as biblioteca [Microsoft.EntityFramework.Core](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore) em conjunto sua extensão [Npgsql.EntityFrameworkCore.PostgreSQL](https://www.nuget.org/packages/Npgsql.EntityFrameworkCore.PostgreSQL.NetTopologySuite).
+
+Posteriormente, foi realizado a modelagem da camada de ORM:
+* Implementação de um DBContext, para uma database no host "localhost" de nome "postgres", com usuário "postgres" e senha "admin:
+![image](https://github.com/pedro-ca/DeMaria-X-Company/assets/50923316/9c11981f-ebc2-4e32-aebe-602288418d76)
+* Implementação de um repositório com operações genéricas:
+![image](https://github.com/pedro-ca/DeMaria-X-Company/assets/50923316/40df4cfb-0ecb-4e94-a0fe-d53919735654)
+* Mapeamento dos atributos de uma classe existente para o Entity Framework
+![image](https://github.com/pedro-ca/DeMaria-X-Company/assets/50923316/9aa57731-af29-4a7a-9ab4-a23146fb4d2a)
+* E por fim a criação de uma classe ORM, que chamará as operações do repositório genérico:
+![image](https://github.com/pedro-ca/DeMaria-X-Company/assets/50923316/0544f476-b066-4fed-8b85-2d7e355c604e)
+
+Com essas alterações feita, é necessário criar uma nova migration do Entity Framework e atualizar o banco: 
+* No "Package Manager Console" do Visual Studio com o projeto "X-Company.ORM" selecionado, crie uma nova migration com o comando:
+	`add-migration devmigration`
+* Posteriormente, atualize o esquema da database com o comando: `update-database`
+  * Caso retorne um erro dizendo que falta a extensão postgis, [siga esse guia ](https://postgis.net/documentation/getting_started/).
+
+
+
+
 
 
 
