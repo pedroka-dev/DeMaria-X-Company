@@ -23,14 +23,5 @@ namespace X_Company.ORM
                         property.SetColumnType("decimal(18,2)");
             }
         }
-
-        //public static IConfiguration InitConfiguration()
-        //{
-        //    var config = new ConfigurationBuilder()
-        //        .AddJsonFile("appsettings.json")
-        //        .SetBasePath(Directory.GetCurrentDirectory())
-        //        .Build();
-        //    return config;
-        //}
     }
 }

@@ -83,7 +83,6 @@ namespace X_Company.ORM
                 return null;
             }
         }
-
         public bool Exists(int id)
         {
             try

@@ -29,215 +29,214 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductViewForm));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.deleteButton = new System.Windows.Forms.Button();
-            this.reportButton = new System.Windows.Forms.Button();
-            this.editButton = new System.Windows.Forms.Button();
-            this.newButton = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.SuspendLayout();
+            panel1 = new Panel();
+            label1 = new Label();
+            pictureBox1 = new PictureBox();
+            panel2 = new Panel();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            editButton = new Button();
+            newButton = new Button();
+            reportButton = new Button();
+            deleteButton = new Button();
+            panel3 = new Panel();
+            tableLayoutPanel2 = new TableLayoutPanel();
+            ProductsDataGridView = new DataGridView();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel2.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
+            panel3.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ProductsDataGridView).BeginInit();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1092, 149);
-            this.panel1.TabIndex = 0;
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1092, 186);
+            panel1.TabIndex = 0;
             // 
             // label1
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label1.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 103);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1092, 46);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Products Management";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label1.Dock = DockStyle.Bottom;
+            label1.Font = new Font("Arial", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(0, 128);
+            label1.Name = "label1";
+            label1.Size = new Size(1092, 58);
+            label1.TabIndex = 2;
+            label1.Text = "Products Management";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1092, 90);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Dock = DockStyle.Top;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(1092, 112);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.tableLayoutPanel1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 531);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1092, 100);
-            this.panel2.TabIndex = 1;
+            panel2.Controls.Add(tableLayoutPanel1);
+            panel2.Dock = DockStyle.Bottom;
+            panel2.Location = new Point(0, 664);
+            panel2.Margin = new Padding(3, 4, 3, 4);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1092, 125);
+            panel2.TabIndex = 1;
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Controls.Add(this.editButton, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.newButton, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.reportButton, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.deleteButton, 2, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1092, 100);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // deleteButton
-            // 
-            this.deleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.deleteButton.BackColor = System.Drawing.SystemColors.WindowText;
-            this.deleteButton.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteButton.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.deleteButton.Location = new System.Drawing.Point(596, 20);
-            this.deleteButton.Margin = new System.Windows.Forms.Padding(50, 20, 50, 20);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(173, 60);
-            this.deleteButton.TabIndex = 4;
-            this.deleteButton.Text = "🗑️ Delete";
-            this.deleteButton.UseVisualStyleBackColor = false;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
-            // 
-            // reportButton
-            // 
-            this.reportButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.reportButton.BackColor = System.Drawing.SystemColors.WindowText;
-            this.reportButton.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reportButton.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.reportButton.Location = new System.Drawing.Point(869, 20);
-            this.reportButton.Margin = new System.Windows.Forms.Padding(50, 20, 50, 20);
-            this.reportButton.Name = "reportButton";
-            this.reportButton.Size = new System.Drawing.Size(173, 60);
-            this.reportButton.TabIndex = 3;
-            this.reportButton.Text = "📄 Report";
-            this.reportButton.UseVisualStyleBackColor = false;
-            this.reportButton.Click += new System.EventHandler(this.reportButton_Click);
+            tableLayoutPanel1.ColumnCount = 4;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.Controls.Add(editButton, 1, 0);
+            tableLayoutPanel1.Controls.Add(newButton, 0, 0);
+            tableLayoutPanel1.Controls.Add(reportButton, 3, 0);
+            tableLayoutPanel1.Controls.Add(deleteButton, 2, 0);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Size = new Size(1092, 125);
+            tableLayoutPanel1.TabIndex = 0;
             // 
             // editButton
             // 
-            this.editButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.editButton.BackColor = System.Drawing.SystemColors.WindowText;
-            this.editButton.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editButton.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.editButton.Location = new System.Drawing.Point(323, 20);
-            this.editButton.Margin = new System.Windows.Forms.Padding(50, 20, 50, 20);
-            this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(173, 60);
-            this.editButton.TabIndex = 2;
-            this.editButton.Text = "✏️ Edit";
-            this.editButton.UseVisualStyleBackColor = false;
-            this.editButton.Click += new System.EventHandler(this.editButton_Click);
+            editButton.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            editButton.BackColor = SystemColors.WindowText;
+            editButton.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            editButton.ForeColor = SystemColors.ControlLight;
+            editButton.Location = new Point(323, 25);
+            editButton.Margin = new Padding(50, 25, 50, 25);
+            editButton.Name = "editButton";
+            editButton.Size = new Size(173, 75);
+            editButton.TabIndex = 2;
+            editButton.Text = "✏️ Edit";
+            editButton.UseVisualStyleBackColor = false;
+            editButton.Click += editButton_Click;
             // 
             // newButton
             // 
-            this.newButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.newButton.BackColor = System.Drawing.SystemColors.WindowText;
-            this.newButton.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newButton.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.newButton.Location = new System.Drawing.Point(50, 20);
-            this.newButton.Margin = new System.Windows.Forms.Padding(50, 20, 50, 20);
-            this.newButton.Name = "newButton";
-            this.newButton.Size = new System.Drawing.Size(173, 60);
-            this.newButton.TabIndex = 1;
-            this.newButton.Text = "➕ New";
-            this.newButton.UseVisualStyleBackColor = false;
-            this.newButton.Click += new System.EventHandler(this.newButton_Click);
+            newButton.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            newButton.BackColor = SystemColors.WindowText;
+            newButton.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            newButton.ForeColor = SystemColors.ControlLight;
+            newButton.Location = new Point(50, 25);
+            newButton.Margin = new Padding(50, 25, 50, 25);
+            newButton.Name = "newButton";
+            newButton.Size = new Size(173, 75);
+            newButton.TabIndex = 1;
+            newButton.Text = "➕ New";
+            newButton.UseVisualStyleBackColor = false;
+            newButton.Click += newButton_Click;
+            // 
+            // reportButton
+            // 
+            reportButton.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            reportButton.BackColor = SystemColors.WindowText;
+            reportButton.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            reportButton.ForeColor = SystemColors.ControlLight;
+            reportButton.Location = new Point(869, 25);
+            reportButton.Margin = new Padding(50, 25, 50, 25);
+            reportButton.Name = "reportButton";
+            reportButton.Size = new Size(173, 75);
+            reportButton.TabIndex = 3;
+            reportButton.Text = "📄 Report";
+            reportButton.UseVisualStyleBackColor = false;
+            reportButton.Click += reportButton_Click;
+            // 
+            // deleteButton
+            // 
+            deleteButton.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            deleteButton.BackColor = SystemColors.WindowText;
+            deleteButton.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            deleteButton.ForeColor = SystemColors.ControlLight;
+            deleteButton.Location = new Point(596, 25);
+            deleteButton.Margin = new Padding(50, 25, 50, 25);
+            deleteButton.Name = "deleteButton";
+            deleteButton.Size = new Size(173, 75);
+            deleteButton.TabIndex = 4;
+            deleteButton.Text = "🗑️ Delete";
+            deleteButton.UseVisualStyleBackColor = false;
+            deleteButton.Click += deleteButton_Click;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.tableLayoutPanel2);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 149);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1092, 382);
-            this.panel3.TabIndex = 2;
+            panel3.Controls.Add(tableLayoutPanel2);
+            panel3.Dock = DockStyle.Fill;
+            panel3.Location = new Point(0, 186);
+            panel3.Margin = new Padding(3, 4, 3, 4);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(1092, 478);
+            panel3.TabIndex = 2;
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel2.Controls.Add(this.dataGridView1, 1, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1092, 382);
-            this.tableLayoutPanel2.TabIndex = 0;
+            tableLayoutPanel2.ColumnCount = 3;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 5F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 90F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 5F));
+            tableLayoutPanel2.Controls.Add(ProductsDataGridView, 1, 0);
+            tableLayoutPanel2.Dock = DockStyle.Fill;
+            tableLayoutPanel2.Location = new Point(0, 0);
+            tableLayoutPanel2.Margin = new Padding(3, 4, 3, 4);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 1;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel2.Size = new Size(1092, 478);
+            tableLayoutPanel2.TabIndex = 0;
             // 
-            // dataGridView1
+            // ProductsDataGridView
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(57, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(976, 376);
-            this.dataGridView1.TabIndex = 0;
+            ProductsDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            ProductsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            ProductsDataGridView.Dock = DockStyle.Fill;
+            ProductsDataGridView.Location = new Point(57, 4);
+            ProductsDataGridView.Margin = new Padding(3, 4, 3, 4);
+            ProductsDataGridView.Name = "ProductsDataGridView";
+            ProductsDataGridView.RowHeadersWidth = 51;
+            ProductsDataGridView.RowTemplate.Height = 24;
+            ProductsDataGridView.Size = new Size(976, 470);
+            ProductsDataGridView.TabIndex = 0;
             // 
             // ProductViewForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlText;
-            this.ClientSize = new System.Drawing.Size(1092, 631);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1110, 678);
-            this.Name = "ProductViewForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "X Company - Products Management";
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ControlText;
+            ClientSize = new Size(1092, 789);
+            Controls.Add(panel3);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 4, 3, 4);
+            MinimumSize = new Size(1110, 836);
+            Name = "ProductViewForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "X Company - Products Management";
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel2.ResumeLayout(false);
+            tableLayoutPanel1.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)ProductsDataGridView).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -253,6 +252,6 @@
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView ProductsDataGridView;
     }
 }
