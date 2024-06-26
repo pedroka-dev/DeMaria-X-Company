@@ -43,14 +43,14 @@
             deleteButton = new Button();
             panel3 = new Panel();
             tableLayoutPanel2 = new TableLayoutPanel();
-            ProductsDataGridView = new DataGridView();
+            dataGridView = new DataGridView();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             panel3.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)ProductsDataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -194,7 +194,7 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 5F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 90F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 5F));
-            tableLayoutPanel2.Controls.Add(ProductsDataGridView, 1, 0);
+            tableLayoutPanel2.Controls.Add(dataGridView, 1, 0);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(0, 0);
             tableLayoutPanel2.Margin = new Padding(3, 4, 3, 4);
@@ -204,22 +204,22 @@
             tableLayoutPanel2.Size = new Size(1092, 478);
             tableLayoutPanel2.TabIndex = 0;
             // 
-            // ProductsDataGridView
+            // dataGridView
             // 
-            ProductsDataGridView.AllowUserToAddRows = false;
-            ProductsDataGridView.AllowUserToDeleteRows = false;
-            ProductsDataGridView.AllowUserToResizeRows = false;
-            ProductsDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            ProductsDataGridView.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView.AllowUserToAddRows = false;
+            dataGridView.AllowUserToDeleteRows = false;
+            dataGridView.AllowUserToResizeRows = false;
+            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.ControlLightLight;
             dataGridViewCellStyle1.Font = new Font("Arial", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = Color.White;
             dataGridViewCellStyle1.SelectionForeColor = Color.Black;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            ProductsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            ProductsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.White;
             dataGridViewCellStyle2.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -227,16 +227,16 @@
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            ProductsDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            ProductsDataGridView.Dock = DockStyle.Fill;
-            ProductsDataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
-            ProductsDataGridView.EnableHeadersVisualStyles = false;
-            ProductsDataGridView.GridColor = Color.Black;
-            ProductsDataGridView.Location = new Point(57, 4);
-            ProductsDataGridView.Margin = new Padding(3, 4, 3, 4);
-            ProductsDataGridView.MultiSelect = false;
-            ProductsDataGridView.Name = "ProductsDataGridView";
-            ProductsDataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView.Dock = DockStyle.Fill;
+            dataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dataGridView.EnableHeadersVisualStyles = false;
+            dataGridView.GridColor = Color.Black;
+            dataGridView.Location = new Point(57, 4);
+            dataGridView.Margin = new Padding(3, 4, 3, 4);
+            dataGridView.MultiSelect = false;
+            dataGridView.Name = "dataGridView";
+            dataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = SystemColors.ControlDark;
             dataGridViewCellStyle3.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -244,17 +244,17 @@
             dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            ProductsDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            ProductsDataGridView.RowHeadersVisible = false;
-            ProductsDataGridView.RowHeadersWidth = 51;
-            ProductsDataGridView.RowTemplate.Height = 24;
-            ProductsDataGridView.RowTemplate.ReadOnly = true;
-            ProductsDataGridView.RowTemplate.Resizable = DataGridViewTriState.False;
-            ProductsDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            ProductsDataGridView.ShowCellToolTips = false;
-            ProductsDataGridView.ShowEditingIcon = false;
-            ProductsDataGridView.Size = new Size(976, 470);
-            ProductsDataGridView.TabIndex = 0;
+            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridView.RowHeadersVisible = false;
+            dataGridView.RowHeadersWidth = 51;
+            dataGridView.RowTemplate.Height = 24;
+            dataGridView.RowTemplate.ReadOnly = true;
+            dataGridView.RowTemplate.Resizable = DataGridViewTriState.False;
+            dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView.ShowCellToolTips = false;
+            dataGridView.ShowEditingIcon = false;
+            dataGridView.Size = new Size(976, 470);
+            dataGridView.TabIndex = 0;
             // 
             // ProductViewForm
             // 
@@ -277,7 +277,7 @@
             tableLayoutPanel1.ResumeLayout(false);
             panel3.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)ProductsDataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             ResumeLayout(false);
         }
 
@@ -294,6 +294,6 @@
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.DataGridView ProductsDataGridView;
+        private System.Windows.Forms.DataGridView dataGridView;
     }
 }
