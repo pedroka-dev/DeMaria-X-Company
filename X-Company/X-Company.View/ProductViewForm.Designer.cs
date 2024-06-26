@@ -131,7 +131,7 @@
             editButton.TabIndex = 2;
             editButton.Text = "✏️ Edit";
             editButton.UseVisualStyleBackColor = false;
-            editButton.Click += editButton_Click;
+            editButton.Click += EditButton_Click;
             // 
             // newButton
             // 
@@ -146,7 +146,7 @@
             newButton.TabIndex = 1;
             newButton.Text = "➕ New";
             newButton.UseVisualStyleBackColor = false;
-            newButton.Click += newButton_Click;
+            newButton.Click += NewButton_Click;
             // 
             // reportButton
             // 
@@ -161,7 +161,7 @@
             reportButton.TabIndex = 3;
             reportButton.Text = "📄 Report";
             reportButton.UseVisualStyleBackColor = false;
-            reportButton.Click += reportButton_Click;
+            reportButton.Click += ReportButton_Click;
             // 
             // deleteButton
             // 
@@ -176,7 +176,7 @@
             deleteButton.TabIndex = 4;
             deleteButton.Text = "🗑️ Delete";
             deleteButton.UseVisualStyleBackColor = false;
-            deleteButton.Click += deleteButton_Click;
+            deleteButton.Click += DeleteButton_Click;
             // 
             // panel3
             // 

@@ -1,8 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Data;
-using System.DirectoryServices.ActiveDirectory;
-using System.Windows.Forms;
+﻿using X_Company.Domain.Features;
 using X_Company.ORM;
 
 namespace X_Company
@@ -10,46 +6,48 @@ namespace X_Company
     public partial class ProductViewForm : Form
     {
         private BindingSource bindingSource;
-        private XCompanyDBContext _context;
+        private BaseRepository<Product> _repository;
+
         public ProductViewForm()
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
-            _context = new XCompanyDBContext();
-            bindingSource = new BindingSource();
 
-            this.Load += OnFormLoadAsync;       //Subscribes to custom OnLoad async event
+            bindingSource = new BindingSource();
+            _repository = new BaseRepository<Product>(new XCompanyDBContext());
+
             dataGridView.CellFormatting += DataGridView_CellFormatting;     //Subscribes to CellFormating event
         }
 
-        public async void ReloadDataAsync()
+        protected override void OnLoad(EventArgs e)
         {
-            await UpdateDatagridAsync();
+            ReloadDataGridAsync(true);
+            base.OnLoad(e);
         }
 
-        private async Task UpdateDatagridAsync() //Update is Async to work well even with big databases
+        protected override void OnFormClosed(FormClosedEventArgs e)
         {
-            bindingSource.DataSource = await _context.Products.ToListAsync();
+            _repository.DisposeDb();
+            base.OnFormClosed(e);
+        }
+
+        public async void ReloadDataGridAsync(bool configureGrid = false)
+        {
+            bindingSource.DataSource = await Task.Run(_repository.SelectAll);
             dataGridView.DataSource = bindingSource;
-        }
-
-
-        private async void OnFormLoadAsync(object sender, EventArgs e)  //Custom async event called when form is loaded
-        {
-            await UpdateDatagridAsync();
-            ConfigureDataGridView();
+            if (configureGrid)  //Avoids redundant calls. ConfigureDataGridView() needs to be called just one time
+            {
+                ConfigureDataGridView();
+            }
         }
 
         private void ConfigureDataGridView()
         {
-
-
             dataGridView.Columns["Id"].DisplayIndex = 0;
             dataGridView.Columns["Name"].DisplayIndex = 1;
             dataGridView.Columns["Description"].DisplayIndex = 2;
             dataGridView.Columns["Price"].DisplayIndex = 3;
             dataGridView.Columns["InStock"].DisplayIndex = 4;
-
             dataGridView.Columns["InStock"].HeaderText = "In Stock";
         }
 
@@ -62,31 +60,47 @@ namespace X_Company
             }
         }
 
-
-        protected override void OnFormClosed(FormClosedEventArgs e)
-        {
-            _context.Dispose();
-            base.OnFormClosed(e);
-        }
-
-        private void newButton_Click(object sender, EventArgs e)
+        private void NewButton_Click(object sender, EventArgs e)
         {
             throw new NotImplementedException();
         }
 
-        private void editButton_Click(object sender, EventArgs e)
+        private void EditButton_Click(object sender, EventArgs e)
         {
             throw new NotImplementedException();
         }
 
-        private void deleteButton_Click(object sender, EventArgs e)
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            if (dataGridView.CurrentCell == null)
+            {
+                MessageBox.Show("Select at least one entity before attempting Delete operation.", "Invalid Operation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                int selectedRowIndex = dataGridView.SelectedRows[0].Index;
+                int productId = (int)dataGridView.Rows[selectedRowIndex].Cells["Id"].Value;
+
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to Delete the selected Entity?", "Confirmation needed", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    if (_repository.Delete(productId))
+                    {
+                        MessageBox.Show("Entity deleted sucessfully.", "Invalid Operation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Unknown error when deleting Entity.", "Invalid Operation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            ReloadDataGridAsync();
+        }
+
+        private void ReportButton_Click(object sender, EventArgs e)
         {
             throw new NotImplementedException();
         }
 
-        private void reportButton_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
