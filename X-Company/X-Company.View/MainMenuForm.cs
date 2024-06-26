@@ -13,7 +13,7 @@ namespace X_Company
         private void productsButton_Click(object sender, EventArgs e)
         {
             var view = new ProductViewForm();
-            view.Show();
+            view.Show(this);
         }
 
         private void clientsButton_Click(object sender, EventArgs e)

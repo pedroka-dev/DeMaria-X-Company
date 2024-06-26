@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductViewForm));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
             label1 = new Label();
             pictureBox1 = new PictureBox();
@@ -203,14 +206,53 @@
             // 
             // ProductsDataGridView
             // 
-            ProductsDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            ProductsDataGridView.AllowUserToAddRows = false;
+            ProductsDataGridView.AllowUserToDeleteRows = false;
+            ProductsDataGridView.AllowUserToResizeRows = false;
+            ProductsDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            ProductsDataGridView.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.ControlLightLight;
+            dataGridViewCellStyle1.Font = new Font("Arial", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            ProductsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             ProductsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            ProductsDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             ProductsDataGridView.Dock = DockStyle.Fill;
+            ProductsDataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
+            ProductsDataGridView.EnableHeadersVisualStyles = false;
+            ProductsDataGridView.GridColor = Color.Black;
             ProductsDataGridView.Location = new Point(57, 4);
             ProductsDataGridView.Margin = new Padding(3, 4, 3, 4);
+            ProductsDataGridView.MultiSelect = false;
             ProductsDataGridView.Name = "ProductsDataGridView";
+            ProductsDataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.ControlDark;
+            dataGridViewCellStyle3.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            ProductsDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            ProductsDataGridView.RowHeadersVisible = false;
             ProductsDataGridView.RowHeadersWidth = 51;
             ProductsDataGridView.RowTemplate.Height = 24;
+            ProductsDataGridView.RowTemplate.ReadOnly = true;
+            ProductsDataGridView.RowTemplate.Resizable = DataGridViewTriState.False;
+            ProductsDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            ProductsDataGridView.ShowCellToolTips = false;
+            ProductsDataGridView.ShowEditingIcon = false;
             ProductsDataGridView.Size = new Size(976, 470);
             ProductsDataGridView.TabIndex = 0;
             // 
