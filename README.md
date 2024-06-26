@@ -34,7 +34,7 @@ Tarefas:
   * Documentar os testes realizados e os resultados.
 
 # Planejamento Inicial 
-Nessa etapa é necessário realizar o planejamento da aplicação. C:
+Essa etapa foi realizada no primeiro dia, para analisar os requisitos e escopo da aplicação. O planejamento pode ser dividido em 4 sub etapas:
 * Modelagem de Classe: Utilização de UML para modelar a classes que serão utilizada, para fins de documentação e para ser utilzando como referência na criação do domínio e banco de dados da aplicação
 * Definições de Negócios: Define as regras de negócios levando em consideração os requisitos, simulando as definições de négocio oferecidas por um Product Manager. 
 * Definições Visuais: Define a aparência da interface Windows Forms, simulando as definições visuais oferecidas por um Product Managetr.
@@ -99,7 +99,7 @@ No total foi criado 10 user stories. A divisão foi realizada baseada na similar
 
 
 # Desenvolvimento
-
+Aqui está documentado algumas notas, observações e informações importantes sobre o desenvolvimento. 
 
 ### Conexão com o PortgresSQL utilizando ORM
 Para conexão com o banco de dados PostgresSQL, foi utilizado o principio de design chamado Object Relational Mapping (ORM) ao invés de ADO.Net. Através do Entity Framework e do NPGSQL, o design ORM permite integração do PostgresSQL com maior grau de escalabilidade e facilidade de manutenção.
@@ -121,6 +121,8 @@ Com essas alterações feita, é necessário criar uma nova migration do Entity 
 	`add-migration devmigration`
 * Posteriormente, atualize o esquema da database com o comando: `update-database`
   * Caso retorne um erro dizendo que falta a extensão postgis, [siga esse guia ](https://postgis.net/documentation/getting_started/).
+* Se houver criação qualquer alteração dos atributos das classes e/ou seu mapeamento ORM, é necessário realizar migração de novo 
+  
 
 
 
