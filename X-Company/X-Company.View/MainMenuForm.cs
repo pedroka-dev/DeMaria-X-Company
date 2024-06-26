@@ -10,10 +10,11 @@ namespace X_Company
             InitializeComponent();
         }
 
+
         private void productsButton_Click(object sender, EventArgs e)
         {
             var view = new ProductViewForm();
-            view.Show(this);
+            view.Show();
         }
 
         private void clientsButton_Click(object sender, EventArgs e)
