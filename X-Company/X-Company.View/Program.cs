@@ -1,5 +1,5 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using Microsoft.EntityFrameworkCore;
+using X_Company.ORM;
 
 namespace X_Company
 {
@@ -13,6 +13,11 @@ namespace X_Company
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            XCompanyDBContext db = new();
+            var pendingChanges = db.Database.GetPendingMigrations();
+            if (pendingChanges.Any())
+                db.Database.Migrate();
+
             Application.Run(new MainMenuForm());
         }
     }
