@@ -69,7 +69,7 @@
             productsButton.ForeColor = SystemColors.ControlLight;
             productsButton.Location = new Point(0, 0);
             productsButton.Name = "productsButton";
-            productsButton.Size = new Size(180, 90);
+            productsButton.Size = new Size(200, 90);
             productsButton.TabIndex = 0;
             productsButton.Text = "📦 Products";
             productsButton.UseVisualStyleBackColor = false;
@@ -83,8 +83,8 @@
             salesButton.ForeColor = SystemColors.ControlLightLight;
             salesButton.Location = new Point(0, 315);
             salesButton.Name = "salesButton";
-            salesButton.Size = new Size(180, 90);
-            salesButton.TabIndex = 1;
+            salesButton.Size = new Size(200, 90);
+            salesButton.TabIndex = 2;
             salesButton.Text = "\U0001f6d2 Sales";
             salesButton.UseVisualStyleBackColor = false;
             salesButton.Click += salesButton_Click;
@@ -96,8 +96,8 @@
             clientsButton.ForeColor = SystemColors.ControlLightLight;
             clientsButton.Location = new Point(0, 153);
             clientsButton.Name = "clientsButton";
-            clientsButton.Size = new Size(180, 90);
-            clientsButton.TabIndex = 2;
+            clientsButton.Size = new Size(200, 90);
+            clientsButton.TabIndex = 1;
             clientsButton.Text = "👤 Clients";
             clientsButton.UseVisualStyleBackColor = false;
             clientsButton.Click += clientsButton_Click;
@@ -107,9 +107,9 @@
             panel1.Controls.Add(clientsButton);
             panel1.Controls.Add(salesButton);
             panel1.Controls.Add(productsButton);
-            panel1.Location = new Point(260, 230);
+            panel1.Location = new Point(247, 230);
             panel1.Name = "panel1";
-            panel1.Size = new Size(180, 405);
+            panel1.Size = new Size(200, 405);
             panel1.TabIndex = 2;
             // 
             // MainMenuForm
@@ -136,10 +136,10 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button salesButton;
-        private System.Windows.Forms.Button clientsButton;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button productsButton;
+        private Button productsButton;
+        private Button salesButton;
+        private Button clientsButton;
+        private Panel panel1;
     }
 }
 

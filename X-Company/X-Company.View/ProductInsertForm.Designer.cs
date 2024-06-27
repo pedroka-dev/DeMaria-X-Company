@@ -101,7 +101,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20.0000019F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Size = new Size(701, 533);
-            tableLayoutPanel1.TabIndex = 5;
+            tableLayoutPanel1.TabIndex = 4;
             // 
             // panel1
             // 
@@ -118,9 +118,10 @@
             // 
             nameTextBox.Font = new Font("Arial", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             nameTextBox.Location = new Point(0, 33);
+            nameTextBox.MaxLength = 250;
             nameTextBox.Name = "nameTextBox";
             nameTextBox.Size = new Size(484, 39);
-            nameTextBox.TabIndex = 1;
+            nameTextBox.TabIndex = 0;
             // 
             // label2
             // 
@@ -145,7 +146,7 @@
             panel3.Location = new Point(108, 321);
             panel3.Name = "panel3";
             panel3.Size = new Size(484, 100);
-            panel3.TabIndex = 7;
+            panel3.TabIndex = 3;
             // 
             // InStockNumericUpDown
             // 
@@ -155,7 +156,7 @@
             InStockNumericUpDown.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             InStockNumericUpDown.Name = "InStockNumericUpDown";
             InStockNumericUpDown.Size = new Size(484, 39);
-            InStockNumericUpDown.TabIndex = 6;
+            InStockNumericUpDown.TabIndex = 3;
             InStockNumericUpDown.Tag = "";
             // 
             // label5
@@ -181,7 +182,7 @@
             panel4.Location = new Point(108, 215);
             panel4.Name = "panel4";
             panel4.Size = new Size(484, 100);
-            panel4.TabIndex = 8;
+            panel4.TabIndex = 2;
             // 
             // priceNumericUpDown
             // 
@@ -192,7 +193,7 @@
             priceNumericUpDown.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             priceNumericUpDown.Name = "priceNumericUpDown";
             priceNumericUpDown.Size = new Size(484, 39);
-            priceNumericUpDown.TabIndex = 5;
+            priceNumericUpDown.TabIndex = 2;
             // 
             // label4
             // 
@@ -217,16 +218,17 @@
             panel5.Location = new Point(108, 109);
             panel5.Name = "panel5";
             panel5.Size = new Size(484, 100);
-            panel5.TabIndex = 9;
+            panel5.TabIndex = 1;
             // 
             // descriptionTextBox
             // 
             descriptionTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             descriptionTextBox.Font = new Font("Arial", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             descriptionTextBox.Location = new Point(0, 33);
+            descriptionTextBox.MaxLength = 250;
             descriptionTextBox.Name = "descriptionTextBox";
             descriptionTextBox.Size = new Size(484, 39);
-            descriptionTextBox.TabIndex = 4;
+            descriptionTextBox.TabIndex = 1;
             // 
             // label3
             // 
@@ -252,7 +254,7 @@
             submitButton.Margin = new Padding(150, 15, 150, 15);
             submitButton.Name = "submitButton";
             submitButton.Size = new Size(190, 79);
-            submitButton.TabIndex = 10;
+            submitButton.TabIndex = 4;
             submitButton.Text = "✔️ Submit";
             submitButton.UseVisualStyleBackColor = false;
             submitButton.Click += SubmitButton_Click;

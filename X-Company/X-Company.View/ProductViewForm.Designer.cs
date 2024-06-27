@@ -158,7 +158,7 @@
             reportButton.Margin = new Padding(50, 25, 50, 25);
             reportButton.Name = "reportButton";
             reportButton.Size = new Size(173, 75);
-            reportButton.TabIndex = 3;
+            reportButton.TabIndex = 4;
             reportButton.Text = "📄 Report";
             reportButton.UseVisualStyleBackColor = false;
             reportButton.Click += ReportButton_Click;
@@ -173,7 +173,7 @@
             deleteButton.Margin = new Padding(50, 25, 50, 25);
             deleteButton.Name = "deleteButton";
             deleteButton.Size = new Size(173, 75);
-            deleteButton.TabIndex = 4;
+            deleteButton.TabIndex = 3;
             deleteButton.Text = "🗑️ Delete";
             deleteButton.UseVisualStyleBackColor = false;
             deleteButton.Click += DeleteButton_Click;
