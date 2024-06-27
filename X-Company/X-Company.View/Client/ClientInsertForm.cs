@@ -4,10 +4,11 @@ using X_Company.ORM;
 
 namespace X_Company.View
 {
-    public partial class ProductInsertForm : Form
+    public partial class ClientInsertForm : Form
     {
-        private readonly BaseRepository<Product> repository;
-        public ProductInsertForm(BaseRepository<Product> repository)
+        private readonly BaseRepository<Client> repository;
+
+        public ClientInsertForm(BaseRepository<Client> repository)
         {
             InitializeComponent();
             this.repository = repository;
@@ -16,11 +17,11 @@ namespace X_Company.View
         private void SubmitButton_Click(object sender, EventArgs e)
         {
             var name = nameTextBox.Text;
-            var description = descriptionTextBox.Text;
-            var price = (float)priceNumericUpDown.Value;
-            var inStock = (int)InStockNumericUpDown.Value;
+            var address = addressTextBox.Text;
+            var phone = phoneTextBox.Text;
+            var email = emailTextBox.Text;
 
-            var entity = new Product(name, description, price, inStock);
+            var entity = new Client(name, address, phone, email);
 
             var validationMessage = entity.Validate();
             if (validationMessage.Equals("VALID"))
@@ -31,11 +32,11 @@ namespace X_Company.View
                 }
                 else
                 {
-                    MessageBox.Show("Unknown error when inserting entity.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);     //TOOD: Catch exception instead
+                    MessageBox.Show("Unknown error when inserting Entity.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);     //TOOD: Catch exception instead
                 }
-            
 
-            this.Dispose();
+
+                this.Dispose();
             }
             else
             {

@@ -1,6 +1,6 @@
 ﻿namespace X_Company.View
 {
-    partial class ProductInsertForm
+    partial class ProductUpdateForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductInsertForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductUpdateForm));
             titleLabel = new Label();
             pictureBox1 = new PictureBox();
             tableLayoutPanel1 = new TableLayoutPanel();
@@ -64,7 +64,7 @@
             titleLabel.Name = "titleLabel";
             titleLabel.Size = new Size(701, 58);
             titleLabel.TabIndex = 4;
-            titleLabel.Text = "New Product";
+            titleLabel.Text = "Edit Product ";
             titleLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
@@ -259,7 +259,7 @@
             submitButton.UseVisualStyleBackColor = false;
             submitButton.Click += SubmitButton_Click;
             // 
-            // ProductInsertForm
+            // ProductUpdateForm
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = SystemColors.WindowText;
@@ -267,13 +267,12 @@
             Controls.Add(tableLayoutPanel1);
             Controls.Add(titleLabel);
             Controls.Add(pictureBox1);
-            ForeColor = SystemColors.ControlText;
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
-            Name = "ProductInsertForm";
+            Name = "ProductUpdateForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Company X - New Product";
+            Text = "Company X - Edit Product";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             panel1.ResumeLayout(false);

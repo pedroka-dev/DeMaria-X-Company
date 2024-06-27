@@ -4,25 +4,25 @@ using X_Company.ORM;
 
 namespace X_Company.View
 {
-    public partial class ProductEditForm : Form
+    public partial class ProductUpdateForm : Form
     {
         private readonly BaseRepository<Product> repository;
-        private readonly Product productToEdit;
-        public ProductEditForm(BaseRepository<Product> repository, Product product)
+        private readonly Product entityToEdit;
+        public ProductUpdateForm(BaseRepository<Product> repository, Product entity)
         {
             InitializeComponent();
-            productToEdit = product;
+            entityToEdit = entity;
             this.repository = repository;
-            LoadFieldsFromEntity(product);
+            LoadFieldsFromEntity(entity);
         }
 
-        private void LoadFieldsFromEntity(Product product)
+        private void LoadFieldsFromEntity(Product entity)
         {
-            titleLabel.Text += product.Name;
-            nameTextBox.Text = product.Name;
-            descriptionTextBox.Text = product.Description;
-            priceNumericUpDown.Value = (decimal)product.Price;
-            InStockNumericUpDown.Value = (decimal)product.InStock;
+            titleLabel.Text += entity.Name;
+            nameTextBox.Text = entity.Name;
+            descriptionTextBox.Text = entity.Description;
+            priceNumericUpDown.Value = (decimal)entity.Price;
+            InStockNumericUpDown.Value = (decimal)entity.InStock;
         }
 
         private void SubmitButton_Click(object sender, EventArgs e)
@@ -31,12 +31,12 @@ namespace X_Company.View
             var description = descriptionTextBox.Text;
             var price = (float)priceNumericUpDown.Value;
             var inStock = (int)InStockNumericUpDown.Value;
-            var product = new Product(name, description, price, inStock);
+            var entity = new Product(name, description, price, inStock);
 
-            var validationMessage = product.Validate();
+            var validationMessage = entity.Validate();
             if (validationMessage.Equals("VALID"))
             {
-                if (repository.Update(productToEdit.Id, product))
+                if (repository.Update(entityToEdit.Id, entity))
                 {
                     MessageBox.Show("Entity updated sucessfully.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
