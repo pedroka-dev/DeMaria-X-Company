@@ -24,6 +24,9 @@
     <Compile Update="MainMenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ProductEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ProductViewForm.cs">
       <SubType>Form</SubType>
     </Compile>

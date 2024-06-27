@@ -26,11 +26,11 @@ namespace X_Company.View
             {
                 if (repository.Insert(product))
                 {
-                    MessageBox.Show("Entity added sucessfully.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Entity inserted sucessfully.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Unknown error when adding Entity.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);     //TOOD: Catch exception instead
+                    MessageBox.Show("Unknown error when inserting Entity.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);     //TOOD: Catch exception instead
                 }
             
 
@@ -38,7 +38,7 @@ namespace X_Company.View
             }
             else
             {
-                MessageBox.Show($"Validation error when adding entity:\n{validationMessage}", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Validation error when inserting entity:\n{validationMessage}", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

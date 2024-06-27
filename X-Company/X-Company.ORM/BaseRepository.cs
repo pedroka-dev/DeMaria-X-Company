@@ -32,6 +32,7 @@ namespace X_Company.ORM
         {
             try
             {
+                registro.Id = id;
                 var entity = dbSet.Find(id);
                 dbContext.Entry(entity).CurrentValues.SetValues(registro);
                 dbContext.SaveChanges();

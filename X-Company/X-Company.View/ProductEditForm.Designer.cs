@@ -1,6 +1,6 @@
 ﻿namespace X_Company.View
 {
-    partial class ProductInsertForm
+    partial class ProductEditForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductInsertForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductEditForm));
             titleLabel = new Label();
             pictureBox1 = new PictureBox();
             tableLayoutPanel1 = new TableLayoutPanel();
@@ -64,7 +64,7 @@
             titleLabel.Name = "titleLabel";
             titleLabel.Size = new Size(701, 58);
             titleLabel.TabIndex = 4;
-            titleLabel.Text = "Insert Product";
+            titleLabel.Text = "Edit Product ";
             titleLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
@@ -257,7 +257,7 @@
             submitButton.UseVisualStyleBackColor = false;
             submitButton.Click += SubmitButton_Click;
             // 
-            // ProductInsertForm
+            // ProductEditForm
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = SystemColors.WindowText;
@@ -268,7 +268,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
-            Name = "ProductInsertForm";
+            Name = "ProductEditForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Company X - Insert Product";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

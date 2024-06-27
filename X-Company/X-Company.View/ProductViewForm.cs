@@ -1,4 +1,6 @@
-﻿using X_Company.Domain.Features;
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+using X_Company.Domain.Features;
 using X_Company.ORM;
 using X_Company.View;
 
@@ -52,6 +54,14 @@ namespace X_Company
             dataGridView.Columns["InStock"].HeaderText = "In Stock";
         }
 
+        private int GetSelectedEntityId()
+        {
+            int selectedRowIndex = dataGridView.SelectedRows[0].Index;
+            int entityId = (int)dataGridView.Rows[selectedRowIndex].Cells["Id"].Value;
+            return entityId;
+        }
+
+
         private void DataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)      //Formats Price cell to currency value
         {
             if (dataGridView.Columns[e.ColumnIndex].Name == "Price" && e.Value != null)
@@ -70,7 +80,10 @@ namespace X_Company
 
         private void EditButton_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            var entity = repository.SelectById(GetSelectedEntityId());
+            var form = new ProductEditForm(repository, entity);
+            form.ShowDialog();
+            ReloadDataGridAsync();
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)
@@ -81,13 +94,10 @@ namespace X_Company
             }
             else
             {
-                int selectedRowIndex = dataGridView.SelectedRows[0].Index;
-                int productId = (int)dataGridView.Rows[selectedRowIndex].Cells["Id"].Value;
-
                 DialogResult dialogResult = MessageBox.Show("Are you sure you want to Delete the selected Entity?", "Confirmation needed", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    if (repository.Delete(productId))
+                    if (repository.Delete(GetSelectedEntityId()))
                     {
                         MessageBox.Show("Entity deleted sucessfully.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
