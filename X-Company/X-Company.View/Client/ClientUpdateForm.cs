@@ -4,11 +4,11 @@ using X_Company.ORM;
 
 namespace X_Company.View
 {
-    public partial class ProductEditForm : Form
+    public partial class ClientUpdateForm : Form
     {
-        private readonly BaseRepository<Product> repository;
-        private readonly Product entityToEdit;
-        public ProductEditForm(BaseRepository<Product> repository, Product entity)
+        private readonly BaseRepository<Client> repository;
+        private readonly Client entityToEdit;
+        public ClientUpdateForm(BaseRepository<Client> repository, Client entity)
         {
             InitializeComponent();
             entityToEdit = entity;
@@ -16,22 +16,23 @@ namespace X_Company.View
             LoadFieldsFromEntity(entity);
         }
 
-        private void LoadFieldsFromEntity(Product entity)
+        private void LoadFieldsFromEntity(Client entity)
         {
             titleLabel.Text += entity.Name;
             nameTextBox.Text = entity.Name;
-            descriptionTextBox.Text = entity.Description;
-            priceNumericUpDown.Value = (decimal)entity.Price;
-            InStockNumericUpDown.Value = (decimal)entity.InStock;
+            addressTextBox.Text = entity.Address;
+            phoneTextBox.Text = entity.Phone;
+            emailTextBox.Text = entity.Email;
         }
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
             var name = nameTextBox.Text;
-            var description = descriptionTextBox.Text;
-            var price = (float)priceNumericUpDown.Value;
-            var inStock = (int)InStockNumericUpDown.Value;
-            var entity = new Product(name, description, price, inStock);
+            var address = addressTextBox.Text;
+            var phone = phoneTextBox.Text;
+            var email = emailTextBox.Text;
+
+            var entity = new Client(name, address, phone, email);
 
             var validationMessage = entity.Validate();
             if (validationMessage.Equals("VALID"))
@@ -44,9 +45,9 @@ namespace X_Company.View
                 {
                     MessageBox.Show("Unknown error when updating entity.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);     //TOOD: Catch exception instead
                 }
-            
 
-            this.Dispose();
+
+                this.Dispose();
             }
             else
             {

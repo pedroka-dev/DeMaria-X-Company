@@ -66,7 +66,7 @@ namespace X_Company
         private void EditButton_Click(object sender, EventArgs e)
         {
             var entity = repository.SelectById(GetSelectedEntityId());
-            var form = new ClientEditForm(repository, entity);
+            var form = new ClientUpdateForm(repository, entity);
             form.ShowDialog();
             ReloadDataGridAsync();
         }

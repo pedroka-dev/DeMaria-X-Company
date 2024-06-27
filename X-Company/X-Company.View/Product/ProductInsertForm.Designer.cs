@@ -64,7 +64,7 @@
             titleLabel.Name = "titleLabel";
             titleLabel.Size = new Size(701, 58);
             titleLabel.TabIndex = 4;
-            titleLabel.Text = "Insert Product";
+            titleLabel.Text = "New Product";
             titleLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
@@ -267,12 +267,13 @@
             Controls.Add(tableLayoutPanel1);
             Controls.Add(titleLabel);
             Controls.Add(pictureBox1);
+            ForeColor = SystemColors.ControlText;
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "ProductInsertForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Company X - Insert Product";
+            Text = "Company X - New Product";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             panel1.ResumeLayout(false);

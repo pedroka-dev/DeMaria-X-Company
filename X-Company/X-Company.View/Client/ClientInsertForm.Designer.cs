@@ -62,7 +62,7 @@
             titleLabel.Name = "titleLabel";
             titleLabel.Size = new Size(701, 58);
             titleLabel.TabIndex = 4;
-            titleLabel.Text = "Insert Client";
+            titleLabel.Text = "New Client";
             titleLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
@@ -268,7 +268,7 @@
             MaximizeBox = false;
             Name = "ClientInsertForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Company X - Insert Client";
+            Text = "Company X - New Client";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             panel1.ResumeLayout(false);

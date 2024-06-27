@@ -1,6 +1,6 @@
 ﻿namespace X_Company.View
 {
-    partial class ProductEditForm
+    partial class ClientUpdateForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductEditForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientUpdateForm));
             titleLabel = new Label();
             pictureBox1 = new PictureBox();
             tableLayoutPanel1 = new TableLayoutPanel();
@@ -36,22 +36,20 @@
             nameTextBox = new TextBox();
             label2 = new Label();
             panel3 = new Panel();
-            InStockNumericUpDown = new NumericUpDown();
+            emailTextBox = new TextBox();
             label5 = new Label();
             panel4 = new Panel();
-            priceNumericUpDown = new NumericUpDown();
+            phoneTextBox = new TextBox();
             label4 = new Label();
             panel5 = new Panel();
-            descriptionTextBox = new TextBox();
+            addressTextBox = new TextBox();
             label3 = new Label();
             submitButton = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)InStockNumericUpDown).BeginInit();
             panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)priceNumericUpDown).BeginInit();
             panel5.SuspendLayout();
             SuspendLayout();
             // 
@@ -64,7 +62,7 @@
             titleLabel.Name = "titleLabel";
             titleLabel.Size = new Size(701, 58);
             titleLabel.TabIndex = 4;
-            titleLabel.Text = "Edit Product ";
+            titleLabel.Text = "Edit Client ";
             titleLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
@@ -140,7 +138,7 @@
             // panel3
             // 
             panel3.BackColor = Color.Black;
-            panel3.Controls.Add(InStockNumericUpDown);
+            panel3.Controls.Add(emailTextBox);
             panel3.Controls.Add(label5);
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(108, 321);
@@ -148,16 +146,15 @@
             panel3.Size = new Size(484, 100);
             panel3.TabIndex = 3;
             // 
-            // InStockNumericUpDown
+            // emailTextBox
             // 
-            InStockNumericUpDown.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            InStockNumericUpDown.Font = new Font("Arial", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            InStockNumericUpDown.Location = new Point(0, 33);
-            InStockNumericUpDown.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
-            InStockNumericUpDown.Name = "InStockNumericUpDown";
-            InStockNumericUpDown.Size = new Size(484, 39);
-            InStockNumericUpDown.TabIndex = 3;
-            InStockNumericUpDown.Tag = "";
+            emailTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            emailTextBox.Font = new Font("Arial", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            emailTextBox.Location = new Point(0, 31);
+            emailTextBox.MaxLength = 250;
+            emailTextBox.Name = "emailTextBox";
+            emailTextBox.Size = new Size(484, 39);
+            emailTextBox.TabIndex = 6;
             // 
             // label5
             // 
@@ -168,15 +165,15 @@
             label5.Location = new Point(0, 0);
             label5.Margin = new Padding(0);
             label5.Name = "label5";
-            label5.Size = new Size(256, 33);
+            label5.Size = new Size(102, 33);
             label5.TabIndex = 5;
-            label5.Text = "Quantity in Stock:";
+            label5.Text = "Email:";
             label5.TextAlign = ContentAlignment.TopCenter;
             // 
             // panel4
             // 
             panel4.BackColor = Color.Black;
-            panel4.Controls.Add(priceNumericUpDown);
+            panel4.Controls.Add(phoneTextBox);
             panel4.Controls.Add(label4);
             panel4.Dock = DockStyle.Fill;
             panel4.Location = new Point(108, 215);
@@ -184,16 +181,15 @@
             panel4.Size = new Size(484, 100);
             panel4.TabIndex = 2;
             // 
-            // priceNumericUpDown
+            // phoneTextBox
             // 
-            priceNumericUpDown.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            priceNumericUpDown.DecimalPlaces = 2;
-            priceNumericUpDown.Font = new Font("Arial", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            priceNumericUpDown.Location = new Point(0, 33);
-            priceNumericUpDown.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
-            priceNumericUpDown.Name = "priceNumericUpDown";
-            priceNumericUpDown.Size = new Size(484, 39);
-            priceNumericUpDown.TabIndex = 2;
+            phoneTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            phoneTextBox.Font = new Font("Arial", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            phoneTextBox.Location = new Point(0, 31);
+            phoneTextBox.MaxLength = 250;
+            phoneTextBox.Name = "phoneTextBox";
+            phoneTextBox.Size = new Size(484, 39);
+            phoneTextBox.TabIndex = 5;
             // 
             // label4
             // 
@@ -204,15 +200,15 @@
             label4.Location = new Point(0, 0);
             label4.Margin = new Padding(0);
             label4.Name = "label4";
-            label4.Size = new Size(94, 33);
+            label4.Size = new Size(100, 33);
             label4.TabIndex = 4;
-            label4.Text = "Price:";
+            label4.Text = "Phone";
             label4.TextAlign = ContentAlignment.TopCenter;
             // 
             // panel5
             // 
             panel5.BackColor = Color.Black;
-            panel5.Controls.Add(descriptionTextBox);
+            panel5.Controls.Add(addressTextBox);
             panel5.Controls.Add(label3);
             panel5.Dock = DockStyle.Fill;
             panel5.Location = new Point(108, 109);
@@ -220,15 +216,15 @@
             panel5.Size = new Size(484, 100);
             panel5.TabIndex = 1;
             // 
-            // descriptionTextBox
+            // addressTextBox
             // 
-            descriptionTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            descriptionTextBox.Font = new Font("Arial", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            descriptionTextBox.Location = new Point(0, 33);
-            descriptionTextBox.MaxLength = 250;
-            descriptionTextBox.Name = "descriptionTextBox";
-            descriptionTextBox.Size = new Size(484, 39);
-            descriptionTextBox.TabIndex = 1;
+            addressTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            addressTextBox.Font = new Font("Arial", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            addressTextBox.Location = new Point(0, 33);
+            addressTextBox.MaxLength = 250;
+            addressTextBox.Name = "addressTextBox";
+            addressTextBox.Size = new Size(484, 39);
+            addressTextBox.TabIndex = 1;
             // 
             // label3
             // 
@@ -239,9 +235,9 @@
             label3.Location = new Point(0, 0);
             label3.Margin = new Padding(0);
             label3.Name = "label3";
-            label3.Size = new Size(179, 33);
+            label3.Size = new Size(135, 33);
             label3.TabIndex = 3;
-            label3.Text = "Description:";
+            label3.Text = "Address:";
             label3.TextAlign = ContentAlignment.TopCenter;
             // 
             // submitButton
@@ -259,7 +255,7 @@
             submitButton.UseVisualStyleBackColor = false;
             submitButton.Click += SubmitButton_Click;
             // 
-            // ProductEditForm
+            // ClientUpdateForm
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = SystemColors.WindowText;
@@ -270,19 +266,17 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
-            Name = "ProductEditForm";
+            Name = "ClientUpdateForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Company X - Edit Product";
+            Text = "Company X - Edit Client";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)InStockNumericUpDown).EndInit();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)priceNumericUpDown).EndInit();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             ResumeLayout(false);
@@ -300,11 +294,11 @@
         private TextBox nameTextBox;
         private Label label2;
         private Panel panel4;
-        private TextBox descriptionTextBox;
+        private TextBox addressTextBox;
         private Label label3;
-        private NumericUpDown priceNumericUpDown;
         private Label label4;
-        private NumericUpDown InStockNumericUpDown;
         private Label label5;
+        private TextBox emailTextBox;
+        private TextBox phoneTextBox;
     }
 }

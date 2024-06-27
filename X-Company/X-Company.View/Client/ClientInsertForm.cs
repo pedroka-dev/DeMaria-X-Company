@@ -17,7 +17,7 @@ namespace X_Company.View
         private void SubmitButton_Click(object sender, EventArgs e)
         {
             var name = nameTextBox.Text;
-            var address = phoneTextBox.Text;
+            var address = addressTextBox.Text;
             var phone = phoneTextBox.Text;
             var email = emailTextBox.Text;
 
