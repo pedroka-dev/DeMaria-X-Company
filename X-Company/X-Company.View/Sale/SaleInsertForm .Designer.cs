@@ -36,7 +36,7 @@
             productComboBox = new ComboBox();
             label2 = new Label();
             panel4 = new Panel();
-            priceNumericUpDown = new NumericUpDown();
+            quantityNumericUpDown = new NumericUpDown();
             label4 = new Label();
             panel5 = new Panel();
             clientComboBox = new ComboBox();
@@ -46,7 +46,7 @@
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)priceNumericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)quantityNumericUpDown).BeginInit();
             panel5.SuspendLayout();
             SuspendLayout();
             // 
@@ -135,7 +135,7 @@
             // panel4
             // 
             panel4.BackColor = Color.Black;
-            panel4.Controls.Add(priceNumericUpDown);
+            panel4.Controls.Add(quantityNumericUpDown);
             panel4.Controls.Add(label4);
             panel4.Dock = DockStyle.Fill;
             panel4.Location = new Point(108, 215);
@@ -143,15 +143,15 @@
             panel4.Size = new Size(484, 100);
             panel4.TabIndex = 2;
             // 
-            // priceNumericUpDown
+            // quantityNumericUpDown
             // 
-            priceNumericUpDown.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            priceNumericUpDown.Font = new Font("Arial", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            priceNumericUpDown.Location = new Point(0, 31);
-            priceNumericUpDown.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
-            priceNumericUpDown.Name = "priceNumericUpDown";
-            priceNumericUpDown.Size = new Size(484, 39);
-            priceNumericUpDown.TabIndex = 5;
+            quantityNumericUpDown.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            quantityNumericUpDown.Font = new Font("Arial", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            quantityNumericUpDown.Location = new Point(0, 31);
+            quantityNumericUpDown.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+            quantityNumericUpDown.Name = "quantityNumericUpDown";
+            quantityNumericUpDown.Size = new Size(484, 39);
+            quantityNumericUpDown.TabIndex = 5;
             // 
             // label4
             // 
@@ -238,7 +238,7 @@
             panel1.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)priceNumericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)quantityNumericUpDown).EndInit();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             ResumeLayout(false);
@@ -256,7 +256,7 @@
         private Panel panel4;
         private Label label4;
         private Label label3;
-        private NumericUpDown priceNumericUpDown;
+        private NumericUpDown quantityNumericUpDown;
         private ComboBox clientComboBox;
         private ComboBox productComboBox;
     }
