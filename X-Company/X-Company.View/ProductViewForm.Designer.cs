@@ -67,7 +67,7 @@
             // label1
             // 
             label1.Dock = DockStyle.Bottom;
-            label1.Font = new Font("Arial", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Arial", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
             label1.Location = new Point(0, 128);
             label1.Name = "label1";
