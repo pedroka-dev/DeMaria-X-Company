@@ -73,7 +73,7 @@
             productsButton.TabIndex = 0;
             productsButton.Text = "📦 Products";
             productsButton.UseVisualStyleBackColor = false;
-            productsButton.Click += productsButton_Click;
+            productsButton.Click += ProductsButton_Click;
             // 
             // salesButton
             // 
@@ -87,7 +87,7 @@
             salesButton.TabIndex = 2;
             salesButton.Text = "\U0001f6d2 Sales";
             salesButton.UseVisualStyleBackColor = false;
-            salesButton.Click += salesButton_Click;
+            salesButton.Click += SalesButton_Click;
             // 
             // clientsButton
             // 
@@ -100,7 +100,7 @@
             clientsButton.TabIndex = 1;
             clientsButton.Text = "👤 Clients";
             clientsButton.UseVisualStyleBackColor = false;
-            clientsButton.Click += clientsButton_Click;
+            clientsButton.Click += ClientsButton_Click;
             // 
             // panel1
             // 

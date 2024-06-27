@@ -21,13 +21,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Client\ClientViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="MainMenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="ProductEditForm.cs">
+    <Compile Update="Product\ProductEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="ProductViewForm.cs">
+    <Compile Update="Product\ProductViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
