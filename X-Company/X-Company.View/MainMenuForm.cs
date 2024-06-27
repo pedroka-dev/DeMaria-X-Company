@@ -11,18 +11,19 @@ namespace X_Company
         }
 
 
-        private void productsButton_Click(object sender, EventArgs e)
+        private void ProductsButton_Click(object sender, EventArgs e)
         {
             var view = new ProductViewForm();
             view.Show();
         }
 
-        private void clientsButton_Click(object sender, EventArgs e)
+        private void ClientsButton_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            var view = new ClientViewForm();
+            view.Show();
         }
 
-        private void salesButton_Click(object sender, EventArgs e)
+        private void SalesButton_Click(object sender, EventArgs e)
         {
             throw new NotImplementedException();
         }

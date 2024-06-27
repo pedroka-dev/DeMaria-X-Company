@@ -1,25 +1,21 @@
-﻿using System.ComponentModel;
-using System.Windows.Forms;
-using X_Company.Domain.Features;
+﻿using X_Company.Domain.Features;
 using X_Company.ORM;
 using X_Company.View;
 
 namespace X_Company
 {
-    public partial class ProductViewForm : Form
+    public partial class ClientViewForm : Form
     {
         private readonly BindingSource bindingSource;
-        private readonly BaseRepository<Product> repository;
+        private readonly BaseRepository<Client> repository;
 
-        public ProductViewForm()
+        public ClientViewForm()
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
 
             bindingSource = new BindingSource();
-            repository = new BaseRepository<Product>(new XCompanyDBContext());
-
-            dataGridView.CellFormatting += DataGridView_CellFormatting;     //Subscribes to CellFormating event
+            repository = new BaseRepository<Client>(new XCompanyDBContext());
         }
 
         protected override void OnLoad(EventArgs e)
@@ -48,10 +44,9 @@ namespace X_Company
         {
             dataGridView.Columns["Id"].DisplayIndex = 0;
             dataGridView.Columns["Name"].DisplayIndex = 1;
-            dataGridView.Columns["Description"].DisplayIndex = 2;
-            dataGridView.Columns["Price"].DisplayIndex = 3;
-            dataGridView.Columns["InStock"].DisplayIndex = 4;
-            dataGridView.Columns["InStock"].HeaderText = "In Stock";
+            dataGridView.Columns["Address"].DisplayIndex = 2;
+            dataGridView.Columns["Phone"].DisplayIndex = 3;
+            dataGridView.Columns["Email"].DisplayIndex = 4;
         }
 
         private int GetSelectedEntityId()
@@ -61,29 +56,19 @@ namespace X_Company
             return entityId;
         }
 
-
-        private void DataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)      //Formats Price cell to currency value
-        {
-            if (dataGridView.Columns[e.ColumnIndex].Name == "Price" && e.Value != null)
-            {
-                e.Value = $"${e.Value:0.00}";
-                e.FormattingApplied = true;
-            }
-        }
-
         private void NewButton_Click(object sender, EventArgs e)
         {
-            var form = new ProductInsertForm(repository);
-            form.ShowDialog();
-            ReloadDataGridAsync();
+            //var form = new ClientInsertForm(repository);
+            //form.ShowDialog();
+            //ReloadDataGridAsync();
         }
 
         private void EditButton_Click(object sender, EventArgs e)
         {
-            var entity = repository.SelectById(GetSelectedEntityId());
-            var form = new ProductEditForm(repository, entity);
-            form.ShowDialog();
-            ReloadDataGridAsync();
+            //var entity = repository.SelectById(GetSelectedEntityId());
+            //var form = new ClientEditForm(repository, entity);
+            //form.ShowDialog();
+            //ReloadDataGridAsync();
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)
