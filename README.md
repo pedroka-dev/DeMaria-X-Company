@@ -113,8 +113,6 @@ Posteriormente, foi realizado a modelagem da camada de ORM:
 ![image](https://github.com/pedro-ca/DeMaria-X-Company/assets/50923316/40df4cfb-0ecb-4e94-a0fe-d53919735654)
 * Mapeamento dos atributos de uma classe existente para o Entity Framework
 ![image](https://github.com/pedro-ca/DeMaria-X-Company/assets/50923316/9aa57731-af29-4a7a-9ab4-a23146fb4d2a)
-* E por fim a criação de uma classe ORM, que chamará as operações do repositório genérico:
-![image](https://github.com/pedro-ca/DeMaria-X-Company/assets/50923316/0544f476-b066-4fed-8b85-2d7e355c604e)
 
 Com essas alterações feita, é necessário criar uma nova migration do Entity Framework e atualizar o banco: 
 * No "Package Manager Console" do Visual Studio com o projeto "X-Company.ORM" selecionado, crie uma nova migration com o comando:
