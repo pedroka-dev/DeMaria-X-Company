@@ -65,10 +65,10 @@ namespace X_Company
 
         private void EditButton_Click(object sender, EventArgs e)
         {
-            //var entity = repository.SelectById(GetSelectedEntityId());
-            //var form = new ClientEditForm(repository, entity);
-            //form.ShowDialog();
-            //ReloadDataGridAsync();
+            var entity = repository.SelectById(GetSelectedEntityId());
+            var form = new ClientEditForm(repository, entity);
+            form.ShowDialog();
+            ReloadDataGridAsync();
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)

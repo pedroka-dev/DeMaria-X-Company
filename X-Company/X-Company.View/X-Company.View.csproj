@@ -21,6 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Client\ClientEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Client\ClientViewForm.cs">
       <SubType>Form</SubType>
     </Compile>

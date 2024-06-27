@@ -31,7 +31,7 @@ namespace X_Company.View
                 }
                 else
                 {
-                    MessageBox.Show("Unknown error when inserting Entity.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);     //TOOD: Catch exception instead
+                    MessageBox.Show("Unknown error when inserting entity.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);     //TOOD: Catch exception instead
                 }
             
 
