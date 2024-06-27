@@ -14,7 +14,7 @@ namespace X_Company
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
 
-            bindingSource = new BindingSource();
+            bindingSource = [];
             repository = new BaseRepository<Client>(new XCompanyDBContext());
         }
 
@@ -58,9 +58,9 @@ namespace X_Company
 
         private void NewButton_Click(object sender, EventArgs e)
         {
-            //var form = new ClientInsertForm(repository);
-            //form.ShowDialog();
-            //ReloadDataGridAsync();
+            var form = new ClientInsertForm(repository);
+            form.ShowDialog();
+            ReloadDataGridAsync();
         }
 
         private void EditButton_Click(object sender, EventArgs e)
