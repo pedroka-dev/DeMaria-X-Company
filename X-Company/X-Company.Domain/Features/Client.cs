@@ -11,7 +11,22 @@ namespace X_Company.Domain.Features
         public override string Validate()
         {
             var result = "";
-            //todo validation
+            if (string.IsNullOrWhiteSpace(Name))
+            {
+                result += "* Attribute Name cannot be null or white space.\n";
+            }
+            if (string.IsNullOrWhiteSpace(Address))
+            {
+                result += "* Attribute Address cannot be null or white space.\n";
+            }
+            if (string.IsNullOrEmpty(Phone))        //todo: real phone validation
+            {
+                result += "* Attribute Phone cannot be null or white space.\n";
+            }
+            if (string.IsNullOrEmpty(Email))        //todo: real email validation
+            {
+                result += "* Attribute Email cannot be null or white space.\n";
+            }
             if (result == "")
                 result = "VALID";
             return result;
