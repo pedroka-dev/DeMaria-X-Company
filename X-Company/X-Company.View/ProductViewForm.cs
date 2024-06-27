@@ -89,11 +89,11 @@ namespace X_Company
                 {
                     if (repository.Delete(productId))
                     {
-                        MessageBox.Show("Entity deleted sucessfully.", "Invalid Operation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Entity deleted sucessfully.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MessageBox.Show("Unknown error when deleting Entity.", "Invalid Operation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Unknown error when deleting Entity.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);       ////TOOD: Catch exception instead
                     }
                 }
             }

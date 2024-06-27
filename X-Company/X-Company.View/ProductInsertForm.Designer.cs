@@ -66,7 +66,6 @@
             label1.TabIndex = 4;
             label1.Text = "Insert Product";
             label1.TextAlign = ContentAlignment.MiddleCenter;
-            label1.Click += label1_Click;
             // 
             // pictureBox1
             // 
@@ -130,6 +129,7 @@
             label2.Font = new Font("Arial", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
             label2.Location = new Point(0, 0);
+            label2.Margin = new Padding(0);
             label2.Name = "label2";
             label2.Size = new Size(103, 33);
             label2.TabIndex = 0;
@@ -152,7 +152,7 @@
             InStockNumericUpDown.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             InStockNumericUpDown.Font = new Font("Arial", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             InStockNumericUpDown.Location = new Point(0, 33);
-            InStockNumericUpDown.Maximum = new decimal(new int[] { 999999, 0, 0, 0 });
+            InStockNumericUpDown.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             InStockNumericUpDown.Name = "InStockNumericUpDown";
             InStockNumericUpDown.Size = new Size(484, 39);
             InStockNumericUpDown.TabIndex = 6;
@@ -165,6 +165,7 @@
             label5.Font = new Font("Arial", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.White;
             label5.Location = new Point(0, 0);
+            label5.Margin = new Padding(0);
             label5.Name = "label5";
             label5.Size = new Size(256, 33);
             label5.TabIndex = 5;
@@ -187,9 +188,8 @@
             priceNumericUpDown.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             priceNumericUpDown.DecimalPlaces = 2;
             priceNumericUpDown.Font = new Font("Arial", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            priceNumericUpDown.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
             priceNumericUpDown.Location = new Point(0, 33);
-            priceNumericUpDown.Maximum = new decimal(new int[] { 999999, 0, 0, 0 });
+            priceNumericUpDown.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             priceNumericUpDown.Name = "priceNumericUpDown";
             priceNumericUpDown.Size = new Size(484, 39);
             priceNumericUpDown.TabIndex = 5;
@@ -201,6 +201,7 @@
             label4.Font = new Font("Arial", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
             label4.Location = new Point(0, 0);
+            label4.Margin = new Padding(0);
             label4.Name = "label4";
             label4.Size = new Size(94, 33);
             label4.TabIndex = 4;
@@ -234,6 +235,7 @@
             label3.Font = new Font("Arial", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
             label3.Location = new Point(0, 0);
+            label3.Margin = new Padding(0);
             label3.Name = "label3";
             label3.Size = new Size(179, 33);
             label3.TabIndex = 3;
@@ -253,7 +255,7 @@
             submitButton.TabIndex = 10;
             submitButton.Text = "✔️ Submit";
             submitButton.UseVisualStyleBackColor = false;
-            submitButton.Click += submitButton_Click;
+            submitButton.Click += SubmitButton_Click;
             // 
             // ProductInsertForm
             // 

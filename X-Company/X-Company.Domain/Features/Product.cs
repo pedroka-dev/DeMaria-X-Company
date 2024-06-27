@@ -9,7 +9,7 @@
 
         public override string Validate()
         {
-            throw new NotImplementedException();
+            return "VALID";
         }
 
         public override bool Equals(object? obj)

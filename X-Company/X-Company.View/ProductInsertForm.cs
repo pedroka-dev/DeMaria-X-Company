@@ -13,14 +13,33 @@ namespace X_Company.View
             this.repository = repository;
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void SubmitButton_Click(object sender, EventArgs e)
         {
+            var name = nameTextBox.Text;
+            var description = descriptionTextBox.Text;
+            var price = (float)priceNumericUpDown.Value;
+            var inStock = (int)InStockNumericUpDown.Value;
+            var product = new Product(name, description, price, inStock);
 
-        }
+            var validationMessage = product.Validate();
+            if (validationMessage.Equals("VALID"))
+            {
+                if (repository.Insert(product))
+                {
+                    MessageBox.Show("Entity added sucessfully.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Unknown error when adding Entity.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);     //TOOD: Catch exception instead
+                }
+            
 
-        private void submitButton_Click(object sender, EventArgs e)
-        {
-
+            this.Dispose();
+            }
+            else
+            {
+                MessageBox.Show($"Validation error when adding entity:\n{validationMessage}", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
