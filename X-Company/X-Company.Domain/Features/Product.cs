@@ -9,7 +9,26 @@
 
         public override string Validate()
         {
-            return "VALID";
+            var result = "";
+            if (string.IsNullOrWhiteSpace(Name))
+            {
+                result += "* Attribute Name cannot be null or white space.\n";
+            }
+            if (string.IsNullOrWhiteSpace(Description))
+            {
+                result += "* Attribute Description cannot be null or white space.\n";
+            }
+            if(Price <= 0)
+            {
+                result += "* Attribute Price cannot be a number smaller or equals to zero.\n";
+            }
+            if (InStock < 0)
+            {
+                result += "* Attribute InStock cannot be a number smaller than zero.";
+            }
+            if (result == "")
+                result = "VALID";
+            return result;
         }
 
         public override bool Equals(object? obj)
