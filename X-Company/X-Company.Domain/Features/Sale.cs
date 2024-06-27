@@ -20,6 +20,26 @@ namespace X_Company.Domain.Features
         public override string Validate()
         {
             var result = "";
+            if (Client == null)
+            {
+                result += "* Attribute Client cannot be null.\n";
+            }
+            if (Product == null)
+            {
+                result += "* Attribute Product cannot be null.\n";
+            }
+            else
+            {
+                if (Quantity <= 0)
+                {
+                    result += "* Attribute Quantity cannot be smaller or equals to zero.\n";
+                }
+                else if (Product.InStock < Quantity)
+                {
+                    result += "* Not enough of this product in stock to create this sale.\n";
+                }
+            }
+            
             if (result == "")
                 result = "VALID";
             return result;

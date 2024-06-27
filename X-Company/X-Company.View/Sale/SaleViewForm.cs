@@ -39,7 +39,7 @@ namespace X_Company
 
         public async void ReloadDataGridAsync(bool configureGrid = false)
         {
-            bindingSource.DataSource = await Task.Run(mainRepository.SelectAll);
+            bindingSource.DataSource = await mainRepository.SelectAllIncluding(p => p.Product, c => c.Client);
             dataGridView.DataSource = bindingSource;
             if (configureGrid)  //Avoids redundant calls. ConfigureDataGridView() needs to be called just one time
             {
@@ -64,7 +64,7 @@ namespace X_Company
 
         private void NewButton_Click(object sender, EventArgs e)
         {
-            var form = new SaleInsertForm(mainRepository, productRepository,clientRepository);
+            var form = new SaleInsertForm(mainRepository,productRepository,clientRepository);
             form.ShowDialog();
             ReloadDataGridAsync();
         }
