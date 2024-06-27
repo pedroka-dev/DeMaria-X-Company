@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SaleInsertForm));
             titleLabel = new Label();
             pictureBox1 = new PictureBox();
             tableLayoutPanel1 = new TableLayoutPanel();
@@ -65,7 +64,6 @@
             // pictureBox1
             // 
             pictureBox1.Dock = DockStyle.Top;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
@@ -116,7 +114,7 @@
             productComboBox.Location = new Point(0, 30);
             productComboBox.Name = "productComboBox";
             productComboBox.Size = new Size(484, 40);
-            productComboBox.TabIndex = 5;
+            productComboBox.TabIndex = 0;
             // 
             // label2
             // 
@@ -151,7 +149,7 @@
             quantityNumericUpDown.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             quantityNumericUpDown.Name = "quantityNumericUpDown";
             quantityNumericUpDown.Size = new Size(484, 39);
-            quantityNumericUpDown.TabIndex = 5;
+            quantityNumericUpDown.TabIndex = 2;
             // 
             // label4
             // 
@@ -186,7 +184,7 @@
             clientComboBox.Location = new Point(0, 31);
             clientComboBox.Name = "clientComboBox";
             clientComboBox.Size = new Size(484, 40);
-            clientComboBox.TabIndex = 4;
+            clientComboBox.TabIndex = 1;
             // 
             // label3
             // 
@@ -212,7 +210,7 @@
             submitButton.Margin = new Padding(150, 15, 150, 15);
             submitButton.Name = "submitButton";
             submitButton.Size = new Size(190, 79);
-            submitButton.TabIndex = 4;
+            submitButton.TabIndex = 3;
             submitButton.Text = "✔️ Submit";
             submitButton.UseVisualStyleBackColor = false;
             submitButton.Click += SubmitButton_Click;
@@ -227,7 +225,6 @@
             Controls.Add(pictureBox1);
             ForeColor = SystemColors.ControlText;
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "SaleInsertForm";
             StartPosition = FormStartPosition.CenterScreen;
