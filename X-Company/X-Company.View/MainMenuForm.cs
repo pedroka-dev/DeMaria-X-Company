@@ -25,7 +25,8 @@ namespace X_Company
 
         private void SalesButton_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            var view = new SaleViewForm();
+            view.Show();
         }
     }
 }
