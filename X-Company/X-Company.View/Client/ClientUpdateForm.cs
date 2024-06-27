@@ -6,13 +6,13 @@ namespace X_Company.View
 {
     public partial class ClientUpdateForm : Form
     {
-        private readonly BaseRepository<Client> repository;
+        private readonly BaseRepository<Client> mainRepository;
         private readonly Client entityToEdit;
-        public ClientUpdateForm(BaseRepository<Client> repository, Client entity)
+        public ClientUpdateForm(BaseRepository<Client> mainRepository, Client entity)
         {
             InitializeComponent();
             entityToEdit = entity;
-            this.repository = repository;
+            this.mainRepository = mainRepository;
             LoadFieldsFromEntity(entity);
         }
 
@@ -37,7 +37,7 @@ namespace X_Company.View
             var validationMessage = entity.Validate();
             if (validationMessage.Equals("VALID"))
             {
-                if (repository.Update(entityToEdit.Id, entity))
+                if (mainRepository.Update(entityToEdit.Id, entity))
                 {
                     MessageBox.Show("Entity updated sucessfully.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

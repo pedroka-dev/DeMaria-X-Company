@@ -6,12 +6,12 @@ namespace X_Company.View
 {
     public partial class ClientInsertForm : Form
     {
-        private readonly BaseRepository<Client> repository;
+        private readonly BaseRepository<Client> mainRepository;
 
-        public ClientInsertForm(BaseRepository<Client> repository)
+        public ClientInsertForm(BaseRepository<Client> mainRepository)
         {
             InitializeComponent();
-            this.repository = repository;
+            this.mainRepository = mainRepository;
         }
 
         private void SubmitButton_Click(object sender, EventArgs e)
@@ -26,7 +26,7 @@ namespace X_Company.View
             var validationMessage = entity.Validate();
             if (validationMessage.Equals("VALID"))
             {
-                if (repository.Insert(entity))
+                if (mainRepository.Insert(entity))
                 {
                     MessageBox.Show("Entity inserted sucessfully.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

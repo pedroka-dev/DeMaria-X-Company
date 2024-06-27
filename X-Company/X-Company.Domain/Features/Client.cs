@@ -47,6 +47,11 @@ namespace X_Company.Domain.Features
         {
             return HashCode.Combine(id, Id, Name, Address, Phone, Email);
         }
+
+        public override string ToString()
+        {
+            return $"{this.Name} ({this.Email})"; 
+        }
     }
 }
 

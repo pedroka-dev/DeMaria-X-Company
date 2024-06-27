@@ -24,6 +24,9 @@
     <Compile Update="Client\ClientUpdateForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Sale\SaleInsertForm .cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Sale\SaleViewForm.cs">
       <SubType>Form</SubType>
     </Compile>

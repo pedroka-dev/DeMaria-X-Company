@@ -46,5 +46,10 @@
         {
             return HashCode.Combine(id, Id, Name, Description, Price, InStock);
         }
+
+        public override string ToString()
+        {
+            return $"{this.Name} ({this.InStock} in stock)";
+        }
     }
 }
