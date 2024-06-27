@@ -4,17 +4,17 @@ using X_Company.Domain.Features;
 
 namespace X_Company.ORM.Configurations
 {
-    public class ProductConfiguration : IEntityTypeConfiguration<Product>
+    public class ClientConfiguration : IEntityTypeConfiguration<Client>
     {
-        public void Configure(EntityTypeBuilder<Product> builder)
+        public void Configure(EntityTypeBuilder<Client> builder)
         {
-            builder.ToTable("TBPRODUCT");
+            builder.ToTable("TBCLIENT");
 
             builder.HasKey(p => p.Id);
             builder.Property(p => p.Name).HasColumnType("VARCHAR(50)").IsRequired();
-            builder.Property(p => p.Description).HasColumnType("VARCHAR(50)").IsRequired();
-            builder.Property(p => p.Price).HasColumnType("DOUBLE PRECISION").IsRequired();
-            builder.Property(p => p.InStock).HasColumnType("INTEGER").IsRequired();
+            builder.Property(p => p.Address).HasColumnType("VARCHAR(50)").IsRequired();
+            builder.Property(p => p.Phone).HasColumnType("VARCHAR(50)").IsRequired();
+            builder.Property(p => p.Email).HasColumnType("VARCHAR(50)").IsRequired();
         }
     }
 }
