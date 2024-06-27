@@ -1,20 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Net;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-
+﻿
 namespace X_Company.Domain.Features
 {
-    public class Sale(Product product, Client client, int quantity) : BaseEntity
+    public class Sale : BaseEntity
     {
-        public Product Product { get; set; } = product;
-        public Client Client { get; set; } = client;
-        public int Quantity { get; set; } = quantity;
+        public Product Product { get; set; } 
+        public Client Client { get; set; }
+        public int Quantity { get; set; }
+
+        public Sale(Product product, Client client, int quantity)
+        {
+            Product = product;
+            Client = client;
+            Quantity = quantity;
+        }
+
+        public Sale()       //Needs this empty constructor so Entity Framework can migrate the 1 to many relationship without issues
+        { }
 
         public override string Validate()
         {

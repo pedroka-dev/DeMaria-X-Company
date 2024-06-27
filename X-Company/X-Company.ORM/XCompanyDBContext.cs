@@ -1,13 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using X_Company.Domain.Features;
 
 namespace X_Company.ORM
 {
     public class XCompanyDBContext : DbContext
     {
-        public DbSet<Product> Products { get; set; }
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => 
             optionsBuilder.UseNpgsql(@"Host=localhost;Username=postgres;Password=admin;Database=postgres", o => o.UseNetTopologySuite());
 
