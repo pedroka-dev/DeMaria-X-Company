@@ -67,7 +67,7 @@
             // label1
             // 
             label1.Dock = DockStyle.Bottom;
-            label1.Font = new Font("Arial", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Arial", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
             label1.Location = new Point(0, 128);
             label1.Name = "label1";
@@ -131,7 +131,7 @@
             editButton.TabIndex = 2;
             editButton.Text = "✏️ Edit";
             editButton.UseVisualStyleBackColor = false;
-            editButton.Click += editButton_Click;
+            editButton.Click += EditButton_Click;
             // 
             // newButton
             // 
@@ -146,7 +146,7 @@
             newButton.TabIndex = 1;
             newButton.Text = "➕ New";
             newButton.UseVisualStyleBackColor = false;
-            newButton.Click += newButton_Click;
+            newButton.Click += NewButton_Click;
             // 
             // reportButton
             // 
@@ -161,7 +161,7 @@
             reportButton.TabIndex = 3;
             reportButton.Text = "📄 Report";
             reportButton.UseVisualStyleBackColor = false;
-            reportButton.Click += reportButton_Click;
+            reportButton.Click += ReportButton_Click;
             // 
             // deleteButton
             // 
@@ -176,7 +176,7 @@
             deleteButton.TabIndex = 4;
             deleteButton.Text = "🗑️ Delete";
             deleteButton.UseVisualStyleBackColor = false;
-            deleteButton.Click += deleteButton_Click;
+            deleteButton.Click += DeleteButton_Click;
             // 
             // panel3
             // 
@@ -213,7 +213,7 @@
             dataGridView.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.ControlLightLight;
-            dataGridViewCellStyle1.Font = new Font("Arial", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.Font = new Font("Arial", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = Color.White;
             dataGridViewCellStyle1.SelectionForeColor = Color.Black;
@@ -222,7 +222,7 @@
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.Font = new Font("Arial", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle2.ForeColor = Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
@@ -239,7 +239,7 @@
             dataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = SystemColors.ControlDark;
-            dataGridViewCellStyle3.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.Font = new Font("Arial", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle3.ForeColor = SystemColors.Window;
             dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;

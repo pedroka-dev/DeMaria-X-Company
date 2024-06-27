@@ -5,12 +5,12 @@ namespace X_Company.ORM
 {
     public class BaseRepository<T> where T : BaseEntity
     {
-        protected readonly XCompanyDBContext db;
+        protected readonly XCompanyDBContext dbContext;
         protected readonly DbSet<T> dbSet;
 
-        protected BaseRepository(XCompanyDBContext db)
+        public BaseRepository(XCompanyDBContext db)
         {
-            this.db = db;
+            dbContext = db;
             dbSet = db.Set<T>();
         }
 
@@ -19,7 +19,7 @@ namespace X_Company.ORM
             try
             {
                 dbSet.Add(registro);
-                db.SaveChanges();
+                dbContext.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -32,9 +32,10 @@ namespace X_Company.ORM
         {
             try
             {
+                registro.Id = id;
                 var entity = dbSet.Find(id);
-                db.Entry(entity).CurrentValues.SetValues(registro);
-                db.SaveChanges();
+                dbContext.Entry(entity).CurrentValues.SetValues(registro);
+                dbContext.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -50,7 +51,7 @@ namespace X_Company.ORM
                 if (registro != null)
                 {
                     dbSet.Remove(registro);
-                    db.SaveChanges();
+                    dbContext.SaveChanges();
                 }
                 else
                     return false;
@@ -93,6 +94,11 @@ namespace X_Company.ORM
             {
                 return false;
             }
+        }
+
+        public void DisposeDb()
+        {
+            dbContext.Dispose();
         }
     }
 }

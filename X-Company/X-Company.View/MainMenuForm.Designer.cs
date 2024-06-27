@@ -29,107 +29,107 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenuForm));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.productsButton = new System.Windows.Forms.Button();
-            this.salesButton = new System.Windows.Forms.Button();
-            this.clientsButton = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.SuspendLayout();
+            pictureBox1 = new PictureBox();
+            label1 = new Label();
+            productsButton = new Button();
+            salesButton = new Button();
+            clientsButton = new Button();
+            panel1 = new Panel();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel1.SuspendLayout();
+            SuspendLayout();
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 30);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(701, 113);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(0, 30);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(701, 113);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Arial", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 160);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(701, 46);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Store Administration";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label1.Font = new Font("Arial", 19.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(0, 160);
+            label1.Name = "label1";
+            label1.Size = new Size(701, 46);
+            label1.TabIndex = 1;
+            label1.Text = "Store Administration";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // productsButton
             // 
-            this.productsButton.BackColor = System.Drawing.SystemColors.WindowText;
-            this.productsButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.productsButton.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productsButton.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.productsButton.Location = new System.Drawing.Point(0, 0);
-            this.productsButton.Name = "productsButton";
-            this.productsButton.Size = new System.Drawing.Size(180, 90);
-            this.productsButton.TabIndex = 0;
-            this.productsButton.Text = "📦 Products";
-            this.productsButton.UseVisualStyleBackColor = false;
-            this.productsButton.Click += new System.EventHandler(this.productsButton_Click);
+            productsButton.BackColor = SystemColors.WindowText;
+            productsButton.Dock = DockStyle.Top;
+            productsButton.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            productsButton.ForeColor = SystemColors.ControlLight;
+            productsButton.Location = new Point(0, 0);
+            productsButton.Name = "productsButton";
+            productsButton.Size = new Size(180, 90);
+            productsButton.TabIndex = 0;
+            productsButton.Text = "📦 Products";
+            productsButton.UseVisualStyleBackColor = false;
+            productsButton.Click += productsButton_Click;
             // 
             // salesButton
             // 
-            this.salesButton.BackColor = System.Drawing.SystemColors.WindowText;
-            this.salesButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.salesButton.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.salesButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.salesButton.Location = new System.Drawing.Point(0, 315);
-            this.salesButton.Name = "salesButton";
-            this.salesButton.Size = new System.Drawing.Size(180, 90);
-            this.salesButton.TabIndex = 1;
-            this.salesButton.Text = "🛒 Sales";
-            this.salesButton.UseVisualStyleBackColor = false;
-            this.salesButton.Click += new System.EventHandler(this.salesButton_Click);
+            salesButton.BackColor = SystemColors.WindowText;
+            salesButton.Dock = DockStyle.Bottom;
+            salesButton.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            salesButton.ForeColor = SystemColors.ControlLightLight;
+            salesButton.Location = new Point(0, 315);
+            salesButton.Name = "salesButton";
+            salesButton.Size = new Size(180, 90);
+            salesButton.TabIndex = 1;
+            salesButton.Text = "\U0001f6d2 Sales";
+            salesButton.UseVisualStyleBackColor = false;
+            salesButton.Click += salesButton_Click;
             // 
             // clientsButton
             // 
-            this.clientsButton.BackColor = System.Drawing.SystemColors.WindowText;
-            this.clientsButton.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clientsButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.clientsButton.Location = new System.Drawing.Point(0, 153);
-            this.clientsButton.Name = "clientsButton";
-            this.clientsButton.Size = new System.Drawing.Size(180, 90);
-            this.clientsButton.TabIndex = 2;
-            this.clientsButton.Text = "👤 Clients";
-            this.clientsButton.UseVisualStyleBackColor = false;
-            this.clientsButton.Click += new System.EventHandler(this.clientsButton_Click);
+            clientsButton.BackColor = SystemColors.WindowText;
+            clientsButton.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            clientsButton.ForeColor = SystemColors.ControlLightLight;
+            clientsButton.Location = new Point(0, 153);
+            clientsButton.Name = "clientsButton";
+            clientsButton.Size = new Size(180, 90);
+            clientsButton.TabIndex = 2;
+            clientsButton.Text = "👤 Clients";
+            clientsButton.UseVisualStyleBackColor = false;
+            clientsButton.Click += clientsButton_Click;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.clientsButton);
-            this.panel1.Controls.Add(this.salesButton);
-            this.panel1.Controls.Add(this.productsButton);
-            this.panel1.Location = new System.Drawing.Point(260, 230);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(180, 405);
-            this.panel1.TabIndex = 2;
+            panel1.Controls.Add(clientsButton);
+            panel1.Controls.Add(salesButton);
+            panel1.Controls.Add(productsButton);
+            panel1.Location = new Point(260, 230);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(180, 405);
+            panel1.TabIndex = 2;
             // 
             // MainMenuForm
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.SystemColors.WindowText;
-            this.ClientSize = new System.Drawing.Size(701, 703);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.Name = "MainMenuForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Company X - Store Administration";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.WindowText;
+            ClientSize = new Size(701, 703);
+            Controls.Add(panel1);
+            Controls.Add(label1);
+            Controls.Add(pictureBox1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            Name = "MainMenuForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Company X - Store Administration";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel1.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion
