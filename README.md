@@ -1,5 +1,5 @@
 # DeMaria Company X
-Parte do processo seletivo para a vaga de Desenvolvedor Pleno C# da empresa DeMaria. Essa aplicação foi realizada em 5 dias (entre dia 24/06 até 28/06). Meu principal objetivo é demostrar não só minhas habilidades técnicas, mas também habilidades no planejamento, prototipação e organização no contexto do ciclo de desenvolvimento.
+Parte do processo seletivo para a vaga de Desenvolvedor Pleno C# da empresa DeMaria. Essa aplicação foi realizada em 5 dias (entre dia 24/06 até 28/06). Meu principal objetivo é demostrar não só minhas habilidades técnicas, mas também habilidades no planejamento, prototipação e organização no contexto do ciclo de desenvolvimento. Foi utilizado PostGres 16 e .NET 8.0 para realização desse projeto.
 
 # Requisitos 
 Cenário: A empresa X precisa de um sistema para gerenciar seus clientes e produtos. O sistema deve permitir:
@@ -102,7 +102,7 @@ No total foi criado 10 user stories. A divisão foi realizada baseada na similar
 Aqui está documentado algumas notas, observações e informações importantes sobre o desenvolvimento. 
 
 ### Conexão com o PortgresSQL utilizando ORM
-Para conexão com o banco de dados PostgresSQL, foi utilizado o principio de design chamado Object Relational Mapping (ORM) ao invés de ADO.Net. Através do Entity Framework e do NPGSQL, o design ORM permite integração do PostgresSQL com maior grau de escalabilidade e facilidade de manutenção.
+Para conexão com o banco de dados PostgresSQL 16, foi utilizado o principio de design chamado Object Relational Mapping (ORM) ao invés de ADO.Net. Através do Entity Framework e do NPGSQL, o design ORM permite integração do PostgresSQL com maior grau de escalabilidade e facilidade de manutenção.
 
 Com isso, foi necessário instalar as biblioteca [Microsoft.EntityFramework.Core](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore) em conjunto sua extensão [Npgsql.EntityFrameworkCore.PostgreSQL](https://www.nuget.org/packages/Npgsql.EntityFrameworkCore.PostgreSQL.NetTopologySuite).
 
