@@ -6,13 +6,13 @@ namespace X_Company.View
 {
     public partial class ProductUpdateForm : Form
     {
-        private readonly BaseRepository<Product> repository;
+        private readonly BaseRepository<Product> mainRepository;
         private readonly Product entityToEdit;
-        public ProductUpdateForm(BaseRepository<Product> repository, Product entity)
+        public ProductUpdateForm(BaseRepository<Product> mainRepository, Product entity)
         {
             InitializeComponent();
             entityToEdit = entity;
-            this.repository = repository;
+            this.mainRepository = mainRepository;
             LoadFieldsFromEntity(entity);
         }
 
@@ -36,17 +36,15 @@ namespace X_Company.View
             var validationMessage = entity.Validate();
             if (validationMessage.Equals("VALID"))
             {
-                if (repository.Update(entityToEdit.Id, entity))
+                if (mainRepository.Update(entityToEdit.Id, entity))
                 {
                     MessageBox.Show("Entity updated sucessfully.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Dispose();
                 }
                 else
                 {
                     MessageBox.Show("Unknown error when updating entity.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);     //TOOD: Catch exception instead
-                }
-            
-
-            this.Dispose();
+                } 
             }
             else
             {

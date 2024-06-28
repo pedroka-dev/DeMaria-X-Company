@@ -154,7 +154,7 @@
             emailTextBox.MaxLength = 250;
             emailTextBox.Name = "emailTextBox";
             emailTextBox.Size = new Size(484, 39);
-            emailTextBox.TabIndex = 6;
+            emailTextBox.TabIndex = 3;
             // 
             // label5
             // 
@@ -189,7 +189,8 @@
             phoneTextBox.MaxLength = 250;
             phoneTextBox.Name = "phoneTextBox";
             phoneTextBox.Size = new Size(484, 39);
-            phoneTextBox.TabIndex = 5;
+            phoneTextBox.TabIndex = 2;
+            phoneTextBox.KeyPress += PhoneTextBox_KeyPress;
             // 
             // label4
             // 

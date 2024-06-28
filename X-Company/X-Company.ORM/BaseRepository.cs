@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 using X_Company.Domain;
 
 namespace X_Company.ORM
@@ -84,6 +85,18 @@ namespace X_Company.ORM
                 return null;
             }
         }
+
+        public async virtual Task<List<T>> SelectAllIncluding(params Expression<Func<T, object>>[] includeProperties)   //Used to get objects with relationship
+        {
+            IQueryable<T> query = dbSet;
+            foreach (var includeProperty in includeProperties)
+            {
+                query = query.Include(includeProperty);
+            }
+            return await query.ToListAsync();
+        }
+
+
         public bool Exists(int id)
         {
             try

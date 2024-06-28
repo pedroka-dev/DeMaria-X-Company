@@ -1,6 +1,6 @@
 ﻿namespace X_Company.View
 {
-    partial class ClientUpdateForm
+    partial class SaleInsertForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,28 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientUpdateForm));
             titleLabel = new Label();
             pictureBox1 = new PictureBox();
             tableLayoutPanel1 = new TableLayoutPanel();
             panel1 = new Panel();
-            nameTextBox = new TextBox();
+            productComboBox = new ComboBox();
             label2 = new Label();
-            panel3 = new Panel();
-            emailTextBox = new TextBox();
-            label5 = new Label();
             panel4 = new Panel();
-            phoneTextBox = new TextBox();
+            quantityNumericUpDown = new NumericUpDown();
             label4 = new Label();
             panel5 = new Panel();
-            addressTextBox = new TextBox();
+            clientComboBox = new ComboBox();
             label3 = new Label();
             submitButton = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
-            panel3.SuspendLayout();
             panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)quantityNumericUpDown).BeginInit();
             panel5.SuspendLayout();
             SuspendLayout();
             // 
@@ -62,13 +58,12 @@
             titleLabel.Name = "titleLabel";
             titleLabel.Size = new Size(701, 58);
             titleLabel.TabIndex = 4;
-            titleLabel.Text = "Edit Client ";
+            titleLabel.Text = "New Sale";
             titleLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
             pictureBox1.Dock = DockStyle.Top;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
@@ -84,7 +79,6 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
             tableLayoutPanel1.Controls.Add(panel1, 1, 0);
-            tableLayoutPanel1.Controls.Add(panel3, 1, 3);
             tableLayoutPanel1.Controls.Add(panel4, 1, 2);
             tableLayoutPanel1.Controls.Add(panel5, 1, 1);
             tableLayoutPanel1.Controls.Add(submitButton, 1, 4);
@@ -104,7 +98,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Black;
-            panel1.Controls.Add(nameTextBox);
+            panel1.Controls.Add(productComboBox);
             panel1.Controls.Add(label2);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(108, 3);
@@ -112,14 +106,15 @@
             panel1.Size = new Size(484, 100);
             panel1.TabIndex = 0;
             // 
-            // nameTextBox
+            // productComboBox
             // 
-            nameTextBox.Font = new Font("Arial", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            nameTextBox.Location = new Point(0, 33);
-            nameTextBox.MaxLength = 250;
-            nameTextBox.Name = "nameTextBox";
-            nameTextBox.Size = new Size(484, 39);
-            nameTextBox.TabIndex = 0;
+            productComboBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            productComboBox.Font = new Font("Arial", 16.2F, FontStyle.Bold);
+            productComboBox.FormattingEnabled = true;
+            productComboBox.Location = new Point(0, 30);
+            productComboBox.Name = "productComboBox";
+            productComboBox.Size = new Size(484, 40);
+            productComboBox.TabIndex = 0;
             // 
             // label2
             // 
@@ -130,50 +125,15 @@
             label2.Location = new Point(0, 0);
             label2.Margin = new Padding(0);
             label2.Name = "label2";
-            label2.Size = new Size(103, 33);
+            label2.Size = new Size(130, 33);
             label2.TabIndex = 0;
-            label2.Text = "Name:";
+            label2.Text = "Product:";
             label2.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // panel3
-            // 
-            panel3.BackColor = Color.Black;
-            panel3.Controls.Add(emailTextBox);
-            panel3.Controls.Add(label5);
-            panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(108, 321);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(484, 100);
-            panel3.TabIndex = 3;
-            // 
-            // emailTextBox
-            // 
-            emailTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            emailTextBox.Font = new Font("Arial", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            emailTextBox.Location = new Point(0, 31);
-            emailTextBox.MaxLength = 250;
-            emailTextBox.Name = "emailTextBox";
-            emailTextBox.Size = new Size(484, 39);
-            emailTextBox.TabIndex = 3;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Dock = DockStyle.Top;
-            label5.Font = new Font("Arial", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(0, 0);
-            label5.Margin = new Padding(0);
-            label5.Name = "label5";
-            label5.Size = new Size(102, 33);
-            label5.TabIndex = 5;
-            label5.Text = "Email:";
-            label5.TextAlign = ContentAlignment.TopCenter;
             // 
             // panel4
             // 
             panel4.BackColor = Color.Black;
-            panel4.Controls.Add(phoneTextBox);
+            panel4.Controls.Add(quantityNumericUpDown);
             panel4.Controls.Add(label4);
             panel4.Dock = DockStyle.Fill;
             panel4.Location = new Point(108, 215);
@@ -181,16 +141,15 @@
             panel4.Size = new Size(484, 100);
             panel4.TabIndex = 2;
             // 
-            // phoneTextBox
+            // quantityNumericUpDown
             // 
-            phoneTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            phoneTextBox.Font = new Font("Arial", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            phoneTextBox.Location = new Point(0, 31);
-            phoneTextBox.MaxLength = 250;
-            phoneTextBox.Name = "phoneTextBox";
-            phoneTextBox.Size = new Size(484, 39);
-            phoneTextBox.TabIndex = 2;
-            phoneTextBox.KeyPress += PhoneTextBox_KeyPress;
+            quantityNumericUpDown.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            quantityNumericUpDown.Font = new Font("Arial", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            quantityNumericUpDown.Location = new Point(0, 31);
+            quantityNumericUpDown.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+            quantityNumericUpDown.Name = "quantityNumericUpDown";
+            quantityNumericUpDown.Size = new Size(484, 39);
+            quantityNumericUpDown.TabIndex = 2;
             // 
             // label4
             // 
@@ -201,15 +160,15 @@
             label4.Location = new Point(0, 0);
             label4.Margin = new Padding(0);
             label4.Name = "label4";
-            label4.Size = new Size(100, 33);
+            label4.Size = new Size(138, 33);
             label4.TabIndex = 4;
-            label4.Text = "Phone";
+            label4.Text = "Quantity:";
             label4.TextAlign = ContentAlignment.TopCenter;
             // 
             // panel5
             // 
             panel5.BackColor = Color.Black;
-            panel5.Controls.Add(addressTextBox);
+            panel5.Controls.Add(clientComboBox);
             panel5.Controls.Add(label3);
             panel5.Dock = DockStyle.Fill;
             panel5.Location = new Point(108, 109);
@@ -217,15 +176,15 @@
             panel5.Size = new Size(484, 100);
             panel5.TabIndex = 1;
             // 
-            // addressTextBox
+            // clientComboBox
             // 
-            addressTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            addressTextBox.Font = new Font("Arial", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            addressTextBox.Location = new Point(0, 33);
-            addressTextBox.MaxLength = 250;
-            addressTextBox.Name = "addressTextBox";
-            addressTextBox.Size = new Size(484, 39);
-            addressTextBox.TabIndex = 1;
+            clientComboBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            clientComboBox.Font = new Font("Arial", 16.2F, FontStyle.Bold);
+            clientComboBox.FormattingEnabled = true;
+            clientComboBox.Location = new Point(0, 31);
+            clientComboBox.Name = "clientComboBox";
+            clientComboBox.Size = new Size(484, 40);
+            clientComboBox.TabIndex = 1;
             // 
             // label3
             // 
@@ -236,9 +195,9 @@
             label3.Location = new Point(0, 0);
             label3.Margin = new Padding(0);
             label3.Name = "label3";
-            label3.Size = new Size(135, 33);
+            label3.Size = new Size(93, 33);
             label3.TabIndex = 3;
-            label3.Text = "Address:";
+            label3.Text = "Client";
             label3.TextAlign = ContentAlignment.TopCenter;
             // 
             // submitButton
@@ -251,12 +210,12 @@
             submitButton.Margin = new Padding(150, 15, 150, 15);
             submitButton.Name = "submitButton";
             submitButton.Size = new Size(190, 79);
-            submitButton.TabIndex = 4;
+            submitButton.TabIndex = 3;
             submitButton.Text = "✔️ Submit";
             submitButton.UseVisualStyleBackColor = false;
             submitButton.Click += SubmitButton_Click;
             // 
-            // ClientUpdateForm
+            // SaleInsertForm
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = SystemColors.WindowText;
@@ -264,20 +223,19 @@
             Controls.Add(tableLayoutPanel1);
             Controls.Add(titleLabel);
             Controls.Add(pictureBox1);
+            ForeColor = SystemColors.ControlText;
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
-            Name = "ClientUpdateForm";
+            Name = "SaleInsertForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Company X - Edit Client";
+            Text = "Company X - New Sale";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)quantityNumericUpDown).EndInit();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             ResumeLayout(false);
@@ -288,18 +246,15 @@
         private Label titleLabel;
         private PictureBox pictureBox1;
         private TableLayoutPanel tableLayoutPanel1;
-        private Panel panel3;
         private Panel panel5;
         private Button submitButton;
         private Panel panel1;
-        private TextBox nameTextBox;
         private Label label2;
         private Panel panel4;
-        private TextBox addressTextBox;
-        private Label label3;
         private Label label4;
-        private Label label5;
-        private TextBox emailTextBox;
-        private TextBox phoneTextBox;
+        private Label label3;
+        private NumericUpDown quantityNumericUpDown;
+        private ComboBox clientComboBox;
+        private ComboBox productComboBox;
     }
 }

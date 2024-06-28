@@ -7,7 +7,7 @@ namespace X_Company
     public partial class ProductViewForm : Form
     {
         private readonly BindingSource bindingSource;
-        private readonly BaseRepository<Product> repository;
+        private readonly BaseRepository<Product> mainRepository;
 
         public ProductViewForm()
         {
@@ -15,7 +15,7 @@ namespace X_Company
             this.WindowState = FormWindowState.Maximized;
 
             bindingSource = new BindingSource();
-            repository = new BaseRepository<Product>(new XCompanyDBContext());
+            mainRepository = new BaseRepository<Product>(new XCompanyDBContext());
 
             dataGridView.CellFormatting += DataGridView_CellFormatting;     //Subscribes to CellFormating event
         }
@@ -28,13 +28,13 @@ namespace X_Company
 
         protected override void OnFormClosed(FormClosedEventArgs e)
         {
-            repository.DisposeDb();
+            mainRepository.DisposeDb();
             base.OnFormClosed(e);
         }
 
         public async void ReloadDataGridAsync(bool configureGrid = false)
         {
-            bindingSource.DataSource = await Task.Run(repository.SelectAll);
+            bindingSource.DataSource = await Task.Run(mainRepository.SelectAll);
             dataGridView.DataSource = bindingSource;
             if (configureGrid)  //Avoids redundant calls. ConfigureDataGridView() needs to be called just one time
             {
@@ -71,15 +71,15 @@ namespace X_Company
 
         private void NewButton_Click(object sender, EventArgs e)
         {
-            var form = new ProductInsertForm(repository);
+            var form = new ProductInsertForm(mainRepository);
             form.ShowDialog();
             ReloadDataGridAsync();
         }
 
         private void EditButton_Click(object sender, EventArgs e)
         {
-            var entity = repository.SelectById(GetSelectedEntityId());
-            var form = new ProductUpdateForm(repository, entity);
+            var entity = mainRepository.SelectById(GetSelectedEntityId());
+            var form = new ProductUpdateForm(mainRepository, entity);
             form.ShowDialog();
             ReloadDataGridAsync();
         }
@@ -92,10 +92,10 @@ namespace X_Company
             }
             else
             {
-                DialogResult dialogResult = MessageBox.Show("Are you sure you want to Delete the selected entity?", "Confirmation needed", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to Delete the selected entity? Depedent entities might get deleted too.", "Confirmation needed", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    if (repository.Delete(GetSelectedEntityId()))
+                    if (mainRepository.Delete(GetSelectedEntityId()))
                     {
                         MessageBox.Show("Entity deleted sucessfully.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
