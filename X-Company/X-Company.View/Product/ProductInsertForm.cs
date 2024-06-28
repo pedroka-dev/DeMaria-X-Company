@@ -28,14 +28,12 @@ namespace X_Company.View
                 if (mainRepository.Insert(entity))
                 {
                     MessageBox.Show("Entity inserted sucessfully.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Dispose();
                 }
                 else
                 {
                     MessageBox.Show("Unknown error when inserting entity.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);     //TOOD: Catch exception instead
                 }
-            
-
-            this.Dispose();
             }
             else
             {

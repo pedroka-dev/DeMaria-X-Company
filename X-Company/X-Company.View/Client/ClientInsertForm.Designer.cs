@@ -190,6 +190,7 @@
             phoneTextBox.Name = "phoneTextBox";
             phoneTextBox.Size = new Size(484, 39);
             phoneTextBox.TabIndex = 2;
+            phoneTextBox.KeyPress += PhoneTextBox_KeyPress;
             // 
             // label4
             // 

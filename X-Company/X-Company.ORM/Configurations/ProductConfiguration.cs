@@ -11,10 +11,10 @@ namespace X_Company.ORM.Configurations
             builder.ToTable("TBCLIENT");
 
             builder.HasKey(p => p.Id);
-            builder.Property(p => p.Name).HasColumnType("VARCHAR(50)").IsRequired();
-            builder.Property(p => p.Address).HasColumnType("VARCHAR(50)").IsRequired();
-            builder.Property(p => p.Phone).HasColumnType("VARCHAR(50)").IsRequired();
-            builder.Property(p => p.Email).HasColumnType("VARCHAR(50)").IsRequired();
+            builder.Property(p => p.Name).HasColumnType("VARCHAR(250)").IsRequired();
+            builder.Property(p => p.Address).HasColumnType("VARCHAR(250)").IsRequired();
+            builder.Property(p => p.Phone).HasColumnType("VARCHAR(250)").IsRequired();
+            builder.Property(p => p.Email).HasColumnType("VARCHAR(250)").IsRequired();
         }
     }
 }

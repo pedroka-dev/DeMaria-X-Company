@@ -39,14 +39,12 @@ namespace X_Company.View
                 if (mainRepository.Update(entityToEdit.Id, entity))
                 {
                     MessageBox.Show("Entity updated sucessfully.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Dispose();
                 }
                 else
                 {
                     MessageBox.Show("Unknown error when updating entity.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);     //TOOD: Catch exception instead
-                }
-            
-
-            this.Dispose();
+                } 
             }
             else
             {

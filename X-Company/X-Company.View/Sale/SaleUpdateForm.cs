@@ -52,14 +52,12 @@ namespace X_Company.View
                     //TODO: Update sale.Product.InStock after Sale Update 
                     //entity.RemoveProductFromStocK(entity.Quantity);
                     //productRepository.Update(entity.Product.Id, entity.Product)
+                    this.Dispose();
                 }
                 else
                 {
                     MessageBox.Show("Unknown error when inserting entity.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);     //TODO: Catch exception instead
                 }
-
-
-                this.Dispose();
             }
             else
             {

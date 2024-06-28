@@ -42,14 +42,12 @@ namespace X_Company.View
                     //Removes the quantity from the product stock
                     entity.RemoveProductFromStocK(entity.Quantity);
                     productRepository.Update(entity.Product.Id, entity.Product);
+                    this.Dispose();
                 }
                 else
                 {
                     MessageBox.Show("Unknown error when inserting entity.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);     //TOOD: Catch exception instead
                 }
-
-
-                this.Dispose();
             }
             else
             {

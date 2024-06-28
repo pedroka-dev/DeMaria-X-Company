@@ -40,18 +40,31 @@ namespace X_Company.View
                 if (mainRepository.Update(entityToEdit.Id, entity))
                 {
                     MessageBox.Show("Entity updated sucessfully.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Dispose();
                 }
                 else
                 {
                     MessageBox.Show("Unknown error when updating entity.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);     //TOOD: Catch exception instead
                 }
 
-
-                this.Dispose();
             }
             else
             {
                 MessageBox.Show($"Validation error when updating entity:\n{validationMessage}", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void PhoneTextBox_KeyPress(object sender, KeyPressEventArgs e)  //allows only numbers on Textobx
+        {
+            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
             }
         }
     }
