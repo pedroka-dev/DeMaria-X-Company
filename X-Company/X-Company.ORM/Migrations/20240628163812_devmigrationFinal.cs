@@ -6,11 +6,51 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace X_Company.ORM.Migrations
 {
     /// <inheritdoc />
-    public partial class devmigration3 : Migration
+    public partial class devmigrationFinal : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.EnsureSchema(
+                name: "custome_schema");
+
+            migrationBuilder.AlterDatabase()
+                .Annotation("Npgsql:PostgresExtension:postgis", ",,");
+
+            migrationBuilder.CreateTable(
+                name: "TBCLIENT",
+                schema: "custome_schema",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Name = table.Column<string>(type: "VARCHAR(250)", nullable: false),
+                    Address = table.Column<string>(type: "VARCHAR(250)", nullable: false),
+                    Phone = table.Column<string>(type: "VARCHAR(250)", nullable: false),
+                    Email = table.Column<string>(type: "VARCHAR(250)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TBCLIENT", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "TBPRODUCT",
+                schema: "custome_schema",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Name = table.Column<string>(type: "VARCHAR(250)", nullable: false),
+                    Description = table.Column<string>(type: "VARCHAR(250)", nullable: false),
+                    Price = table.Column<double>(type: "DOUBLE PRECISION", nullable: false),
+                    InStock = table.Column<int>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TBPRODUCT", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "TBSALE",
                 schema: "custome_schema",
@@ -59,6 +99,14 @@ namespace X_Company.ORM.Migrations
         {
             migrationBuilder.DropTable(
                 name: "TBSALE",
+                schema: "custome_schema");
+
+            migrationBuilder.DropTable(
+                name: "TBCLIENT",
+                schema: "custome_schema");
+
+            migrationBuilder.DropTable(
+                name: "TBPRODUCT",
                 schema: "custome_schema");
         }
     }

@@ -11,8 +11,8 @@ using X_Company.ORM;
 namespace X_Company.ORM.Migrations
 {
     [DbContext(typeof(XCompanyDBContext))]
-    [Migration("20240628015920_devmigration4")]
-    partial class devmigration4
+    [Migration("20240628163812_devmigrationFinal")]
+    partial class devmigrationFinal
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

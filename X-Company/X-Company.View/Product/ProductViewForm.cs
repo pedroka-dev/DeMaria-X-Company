@@ -36,23 +36,23 @@ namespace X_Company.View
         {
             bindingSource.DataSource = await Task.Run(mainRepository.SelectAll);
             dataGridView.DataSource = bindingSource;
-            if (configureGrid)  //Avoids redundant calls. ConfigureDataGridView() needs to be called just one time
-            {
-                ConfigureDataGridView();
-            }
+            ConfigureDataGridView();
         }
 
         private void ConfigureDataGridView()
         {
-            dataGridView.Columns["Id"].DisplayIndex = 0;
-            dataGridView.Columns["Name"].DisplayIndex = 1;
-            dataGridView.Columns["Description"].DisplayIndex = 2;
-            dataGridView.Columns["Price"].DisplayIndex = 3;
-            dataGridView.Columns["InStock"].DisplayIndex = 4;
-            dataGridView.Columns["InStock"].HeaderText = "In Stock";
+            if (dataGridView.RowCount > 0)
+            {
+                dataGridView.Columns["Id"].DisplayIndex = 0;
+                dataGridView.Columns["Name"].DisplayIndex = 1;
+                dataGridView.Columns["Description"].DisplayIndex = 2;
+                dataGridView.Columns["Price"].DisplayIndex = 3;
+                dataGridView.Columns["InStock"].DisplayIndex = 4;
+                dataGridView.Columns["InStock"].HeaderText = "In Stock";
+            }
         }
 
-        private int GetSelectedEntityId()
+            private int GetSelectedEntityId()
         {
             int selectedRowIndex = dataGridView.SelectedRows[0].Index;
             int entityId = (int)dataGridView.Rows[selectedRowIndex].Cells["Id"].Value;

@@ -34,19 +34,18 @@ namespace X_Company.View
         {
             bindingSource.DataSource = await Task.Run(mainRepository.SelectAll);
             dataGridView.DataSource = bindingSource;
-            if (configureGrid)  //Avoids redundant calls. ConfigureDataGridView() needs to be called just one time
-            {
-                ConfigureDataGridView();
-            }
         }
 
         private void ConfigureDataGridView()
         {
-            dataGridView.Columns["Id"].DisplayIndex = 0;
-            dataGridView.Columns["Name"].DisplayIndex = 1;
-            dataGridView.Columns["Address"].DisplayIndex = 2;
-            dataGridView.Columns["Phone"].DisplayIndex = 3;
-            dataGridView.Columns["Email"].DisplayIndex = 4;
+            if (dataGridView.RowCount > 0)
+            {
+                dataGridView.Columns["Id"].DisplayIndex = 0;
+                dataGridView.Columns["Name"].DisplayIndex = 1;
+                dataGridView.Columns["Address"].DisplayIndex = 2;
+                dataGridView.Columns["Phone"].DisplayIndex = 3;
+                dataGridView.Columns["Email"].DisplayIndex = 4;
+            }
         }
 
         private int GetSelectedEntityId()
