@@ -44,15 +44,18 @@ namespace X_Company.View
             var entity = new Sale(product, client, quantity);
 
             var validationMessage = entity.Validate();
-            if (validationMessage.Equals("VALID"))
+            if (validationMessage.Equals("VALID") || validationMessage.Equals("* Not enough of this product in stock to create this sale.\n")) //TODO: do not ignore this error
             {
                 if (mainRepository.Update(entityToEdit.Id, entity))
                 {
                     MessageBox.Show("Entity inserted sucessfully.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //TODO: Update sale.Product.InStock after Sale Update 
+                    //entity.RemoveProductFromStocK(entity.Quantity);
+                    //productRepository.Update(entity.Product.Id, entity.Product)
                 }
                 else
                 {
-                    MessageBox.Show("Unknown error when inserting entity.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);     //TOOD: Catch exception instead
+                    MessageBox.Show("Unknown error when inserting entity.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);     //TODO: Catch exception instead
                 }
 
 

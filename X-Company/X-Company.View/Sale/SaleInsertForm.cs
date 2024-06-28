@@ -38,6 +38,10 @@ namespace X_Company.View
                 if (mainRepository.Insert(entity))
                 {
                     MessageBox.Show("Entity inserted sucessfully.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    //Removes the quantity from the product stock
+                    entity.RemoveProductFromStocK(entity.Quantity);
+                    productRepository.Update(entity.Product.Id, entity.Product);
                 }
                 else
                 {

@@ -17,6 +17,9 @@ namespace X_Company.Domain.Features
         public Sale()       //Needs this empty constructor so Entity Framework can migrate the 1 to many relationship without issues
         { }
 
+
+        public void RemoveProductFromStocK(int removedQuantity) => this.Product.InStock -= removedQuantity;
+
         public override string Validate()
         {
             var result = "";
