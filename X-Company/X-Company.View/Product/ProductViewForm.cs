@@ -92,7 +92,7 @@ namespace X_Company
             }
             else
             {
-                DialogResult dialogResult = MessageBox.Show("Are you sure you want to Delete the selected entity?", "Confirmation needed", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to Delete the selected entity? Depedent entities might get deleted too.", "Confirmation needed", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
                 {
                     if (mainRepository.Delete(GetSelectedEntityId()))
