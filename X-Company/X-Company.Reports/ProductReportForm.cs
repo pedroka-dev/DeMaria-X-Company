@@ -3,12 +3,12 @@ using X_Company.Domain.Features;
 
 namespace X_Company.Reports
 {
-    public partial class ClientReportForm : Form
+    public partial class ProductReportForm : Form
     {
-        private readonly List<Client> entityDataSource;
+        private readonly List<Product> entityDataSource;
         private readonly ReportViewer reportViewer;
 
-        public ClientReportForm(List<Client> entityDataSource)
+        public ProductReportForm(List<Product> entityDataSource)
         {
             InitializeComponent();
             this.entityDataSource = entityDataSource;
@@ -29,10 +29,10 @@ namespace X_Company.Reports
 
         protected void LoadReport(LocalReport report)
         {
-            var parameters = new[] { new ReportParameter("Title", "Client Report") };
-            using var fs = new FileStream("..\\..\\..\\..\\X-Company.Reports\\ClientReport.rdlc", FileMode.Open);       //might not work folders are different than solution
+            var parameters = new[] { new ReportParameter("Title", "Product Report") };
+            using var fs = new FileStream("..\\..\\..\\..\\X-Company.Reports\\ProductReport.rdlc", FileMode.Open);       //might not work folders are different than solution
             report.LoadReportDefinition(fs);
-            report.DataSources.Add(new ReportDataSource("ClientDataSet", entityDataSource));
+            report.DataSources.Add(new ReportDataSource("ProductDataSet", entityDataSource));
             report.SetParameters(parameters);
         }
 

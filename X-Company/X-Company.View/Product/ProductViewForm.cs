@@ -1,5 +1,6 @@
 ﻿using X_Company.Domain.Features;
 using X_Company.ORM;
+using X_Company.Reports;
 
 namespace X_Company.View
 {
@@ -109,7 +110,9 @@ namespace X_Company.View
 
         private void ReportButton_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            var form = new ProductReportForm(mainRepository.SelectAll());
+            form.ShowDialog();
+            ReloadDataGridAsync();
         }
 
     }
