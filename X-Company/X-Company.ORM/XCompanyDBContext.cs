@@ -4,6 +4,10 @@ namespace X_Company.ORM
 {
     public class XCompanyDBContext : DbContext
     {
+        public XCompanyDBContext(){}
+
+        public XCompanyDBContext(DbContextOptions options) : base(options){}
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => 
             optionsBuilder.UseNpgsql(@"Host=localhost;Username=postgres;Password=admin;Database=postgres", o => o.UseNetTopologySuite());
 
