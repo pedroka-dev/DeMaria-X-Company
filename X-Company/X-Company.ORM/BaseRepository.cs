@@ -96,19 +96,6 @@ namespace X_Company.ORM
             return await query.ToListAsync();
         }
 
-
-        public bool Exists(int id)
-        {
-            try
-            {
-                return dbSet.ToList().Exists(x => x.Id == id);
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
-        }
-
         public void DisposeDb()
         {
             dbContext.Dispose();
