@@ -11,7 +11,6 @@ namespace X_Company.Reports
         public ClientReportForm(List<Client> entityDataSource)
         {
             InitializeComponent();
-            this.WindowState = FormWindowState.Maximized;
             this.entityDataSource = entityDataSource;
             reportViewer = new ReportViewer();
             reportViewer.Dock = DockStyle.Fill;
@@ -28,10 +27,10 @@ namespace X_Company.Reports
 
         protected void LoadReport(LocalReport report)
         {
-            var parameters = new[] { new ReportParameter("Title", "Invoice 4/2020") };
-            using var fs = new FileStream("ClientReport.rdlc", FileMode.Open);
+            var parameters = new[] { new ReportParameter("Title", "Client Report") };
+            using var fs = new FileStream("..\\..\\..\\..\\X-Company.Reports\\ClientReport.rdlc", FileMode.Open);
             report.LoadReportDefinition(fs);
-            report.DataSources.Add(new ReportDataSource("Items", entityDataSource));
+            report.DataSources.Add(new ReportDataSource("ClientDataSet", entityDataSource));
             report.SetParameters(parameters);
         }
 
