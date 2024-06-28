@@ -188,6 +188,7 @@
             phoneTextBox.Location = new Point(0, 31);
             phoneTextBox.MaxLength = 250;
             phoneTextBox.Name = "phoneTextBox";
+            phoneTextBox.ShortcutsEnabled = false;
             phoneTextBox.Size = new Size(484, 39);
             phoneTextBox.TabIndex = 2;
             phoneTextBox.KeyPress += PhoneTextBox_KeyPress;
