@@ -1,11 +1,21 @@
 ﻿namespace X_Company.Domain.Features
 {
-    public class Product(string name, string description, float price, int inStock) : BaseEntity
+    public class Product : BaseEntity
     {
-        public string Name { get; set; } = name;
-        public string Description { get; set; } = description;
-        public float Price { get; set; } = price;
-        public int InStock { get; set; } = inStock;
+        public string Name { get; set; } 
+        public string Description { get; set; }
+        public float Price { get; set; }
+        public int InStock { get; set; }
+
+        public Product() { }
+
+        public Product(string name, string description, float price, int inStock)
+        {
+            Name = name;
+            Description = description;
+            Price = price;
+            InStock = inStock;
+        }
 
         public override string Validate()
         {

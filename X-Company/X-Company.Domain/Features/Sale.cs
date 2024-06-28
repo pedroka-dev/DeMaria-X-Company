@@ -7,16 +7,14 @@ namespace X_Company.Domain.Features
         public Client Client { get; set; }
         public int Quantity { get; set; }
 
+        public Sale() { }     //Needs this empty constructor so Entity Framework can migrate the 1 to many relationship without issues
+
         public Sale(Product product, Client client, int quantity)
         {
             Product = product;
             Client = client;
             Quantity = quantity;
         }
-
-        public Sale()       //Needs this empty constructor so Entity Framework can migrate the 1 to many relationship without issues
-        { }
-
 
         public void RemoveProductFromStocK(int removedQuantity) => this.Product.InStock -= removedQuantity;
 

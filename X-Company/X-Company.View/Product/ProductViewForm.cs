@@ -1,8 +1,7 @@
 ﻿using X_Company.Domain.Features;
 using X_Company.ORM;
-using X_Company.View;
 
-namespace X_Company
+namespace X_Company.View
 {
     public partial class ProductViewForm : Form
     {

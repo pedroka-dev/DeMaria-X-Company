@@ -1,7 +1,5 @@
-﻿using System;
-using System.Windows.Forms;
-
-namespace X_Company
+﻿
+namespace X_Company.View
 {
     public partial class MainMenuForm : Form
     {
