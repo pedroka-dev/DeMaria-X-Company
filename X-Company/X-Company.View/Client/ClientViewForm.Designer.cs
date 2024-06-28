@@ -1,4 +1,4 @@
-﻿namespace X_Company
+﻿namespace X_Company.View
 {
     partial class ClientViewForm
     {

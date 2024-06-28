@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using X_Company.ORM;
 
-namespace X_Company
+namespace X_Company.View
 {
     internal static class Program
     {
