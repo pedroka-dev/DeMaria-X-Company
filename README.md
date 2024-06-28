@@ -1,6 +1,15 @@
 # DeMaria Company X
 Parte do processo seletivo para a vaga de Desenvolvedor Pleno C# da empresa DeMaria. Essa aplicação foi realizada em 5 dias (entre dia 24/06 até 28/06). Meu principal objetivo é demostrar não só minhas habilidades técnicas, mas também habilidades no planejamento, prototipação e organização no contexto do ciclo de desenvolvimento. Foi utilizado PostGres 16 e .NET 8.0 para realização desse projeto.
 
+# Como executar
+* É necessário ter o [Postgres 16](https://www.postgresql.org/about/news/postgresql-16-released-2715/) instalado e sua extensão [postgis-bundle-pg16-3.4.2](https://download.osgeo.org/postgis/windows/pg16/)
+* Para criar as tabelas em banco utilizando migração do Entity Framework, abra o "Package Manager" do Visual Studio selecione "Default Project" como "2.Infra\X-Company.ORM". O próprio ORM em conjunto com a biblioteca NPGSQL faz gerenciamento do banco de dados.
+  
+  ![image](https://github.com/pedro-ca/DeMaria-X-Company/assets/50923316/10c5ac58-efc2-489a-9c7b-b339b1d19d21)
+  * Caso ocorra problemas de banco, se certifique que a connection string "Host=localhost;Username=postgres;Password=admin;Database=postgres" presente no XCompanyDBContext aponte para um banco e credenciais verdadeiras
+  * Se o problema persistir, **SOMENTE EM ULTIMO CASO** realize a criação da tabela [utilizando a query SQL diretamente no banco](https://github.com/pedro-ca/DeMaria-X-Company/blob/main/ScriptIfEntityFrameworkCrashes.sql).
+
+
 # Requisitos 
 Cenário: A empresa X precisa de um sistema para gerenciar seus clientes e produtos. O sistema deve permitir:
 * Cadastrar, editar e remover clientes, com informações como nome, endereço, telefone e email.
@@ -120,12 +129,42 @@ Com essas alterações feita, é necessário criar uma nova migration do Entity 
 * Posteriormente, atualize o esquema da database com o comando: `update-database`
   * Caso retorne um erro dizendo que falta a extensão postgis, [siga esse guia ](https://postgis.net/documentation/getting_started/).
 * Se houver criação qualquer alteração dos atributos das classes e/ou seu mapeamento ORM, é necessário realizar migração de novo 
-  
+
+# Interface
+Foi seguido o protótipo, com algumas pequenas mudanças. Nas telas de visualização, elementos escalam de acordo com o tamanho da janela.
+![image](https://github.com/pedro-ca/DeMaria-X-Company/assets/50923316/0c88809d-d0d5-43d6-b2ad-4e4229114698)
+![image](https://github.com/pedro-ca/DeMaria-X-Company/assets/50923316/51749827-97d2-4b3a-adc4-dc57bd8c60e1)
+![image](https://github.com/pedro-ca/DeMaria-X-Company/assets/50923316/45ecaae0-bed3-4182-a737-dbbef4620f47)
+![image](https://github.com/pedro-ca/DeMaria-X-Company/assets/50923316/5e3b0b40-93ba-49cd-81ed-9c55e85a59ac)
+![image](https://github.com/pedro-ca/DeMaria-X-Company/assets/50923316/8c53f0f7-8623-4d4d-bb16-e76c70035cd9)
+![image](https://github.com/pedro-ca/DeMaria-X-Company/assets/50923316/24075638-b5c7-493a-ad4d-64065c924fa6)
 
 
+# Validação de Campos
+A validação dos campos foi feita através de um método chamado "Validate()" da camada de domínio. O método pode retornar um ou mais erros caso não seja válido, permitindo assim que o usuário veja as correções faltam para poder inserir a entidade.
+![image](https://github.com/pedro-ca/DeMaria-X-Company/assets/50923316/7bfcf602-112c-4a1b-9015-ad88807dceca)
+![image](https://github.com/pedro-ca/DeMaria-X-Company/assets/50923316/219f8653-484f-4b1b-b3bc-6b6db6573aeb)
+
+# Testes Automatizados
+Foi criado um total de 23 testes automatizados, sendo eles 18 testes unitários e 15 testes de integração.
+
+Os testes unitários foram criados para a validação das classes de domínio e para o método Sale.RemoveProductFromStocK()
+![image](https://github.com/pedro-ca/DeMaria-X-Company/assets/50923316/db69e874-01b4-4559-8234-4550393315d7)
+
+Os testes de integração foram criados para as operações de BaseRepository<T> para cada classe de domínio. Após a adição de bibliotecas do Reportviewer, porém, eles quebraram e não foi possível de resolver.
+![image](https://github.com/pedro-ca/DeMaria-X-Company/assets/50923316/144da9c8-9527-4372-a415-193948792ee9)
 
 
+# ReportViewer 
+Um dos maiores desafios desse projeto foi a implementação do ReportViwer. Isso se deve pelo fato que o projeto inteiro foi desenvolvido em .NET 8, equanto o biblioteca oficial do ReportViewer é para .NET Framework 4.0. 
+
+Para resolver, foi necessário utilizar uma biblioteca chamada [ReportViewerCore](https://github.com/lkosson/reportviewercore). Houve muitos problemas de depêndencia e mudança de biblioteca para ser compatível com essa funcionalidade, mas no final foi possível fazer Reports funcionarem utilizando um projeto separado chamado X-Company.Reports. 
+![image](https://github.com/pedro-ca/DeMaria-X-Company/assets/50923316/0a784cd6-4e99-4d5f-aae3-2f82ceea3b49)
 
 
+# Débito Técnico
+Apesar de o programa estar feature complete, alguns detalhes e correções ficaram de fora da última versão. Com isso, foi criado stories de débito técnico. Foi criado um total de [8 stóries de débito técnico](https://github.com/pedro-ca/DeMaria-X-Company/issues) dessa versão.
+
+![image](https://github.com/pedro-ca/DeMaria-X-Company/assets/50923316/fc1989ed-ba57-49b3-a0c7-f5114b2c1bb7)
 
 
