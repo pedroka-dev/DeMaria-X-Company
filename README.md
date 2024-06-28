@@ -149,9 +149,11 @@ A validação dos campos foi feita através de um método chamado "Validate()" d
 Foi criado um total de 23 testes automatizados, sendo eles 18 testes unitários e 15 testes de integração.
 
 Os testes unitários foram criados para a validação das classes de domínio e para o método Sale.RemoveProductFromStocK()
+
 ![image](https://github.com/pedro-ca/DeMaria-X-Company/assets/50923316/db69e874-01b4-4559-8234-4550393315d7)
 
 Os testes de integração foram criados para as operações de BaseRepository<T> para cada classe de domínio. Após a adição de bibliotecas do Reportviewer, porém, eles quebraram e não foi possível de resolver.
+
 ![image](https://github.com/pedro-ca/DeMaria-X-Company/assets/50923316/144da9c8-9527-4372-a415-193948792ee9)
 
 
