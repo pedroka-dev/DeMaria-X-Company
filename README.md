@@ -1,4 +1,4 @@
-# DeMaria Company X
+# DeMaria X Company 
 Parte do processo seletivo para a vaga de Desenvolvedor Pleno C# da empresa DeMaria. Essa aplicação foi realizada em 5 dias (entre dia 24/06 até 28/06). Meu principal objetivo é demostrar não só minhas habilidades técnicas, mas também habilidades no planejamento, prototipação e organização no contexto do ciclo de desenvolvimento. Foi utilizado PostGres 16 e .NET 8.0 para realização desse projeto.
 
 # Como executar
